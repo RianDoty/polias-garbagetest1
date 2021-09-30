@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
-
 const app = express();
+const http = require('http').Server(app)
 
 // PWAs want HTTPS!
 function checkHttps(request, response, next) {
@@ -15,13 +15,8 @@ function checkHttps(request, response, next) {
 
 app.all("*", checkHttps);
 
-// A test route to make sure the server is up.
-app.get("/api/ping", (request, response) => {
-  console.log("❇️ Received GET request to /api/ping");
-  response.send("pong!");
-});
-
 // Express port-switching logic
+// no touch
 let port;
 console.log("❇️ NODE_ENV is", process.env.NODE_ENV);
 if (process.env.NODE_ENV === "production") {
@@ -39,6 +34,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Start the listener!
-const listener = app.listen(port, () => {
-  console.log("❇️ Express server is running on port", listener.address().port);
+http.listen(port, () => {
+  console.log("❇️ Express server is running on port");
 });
