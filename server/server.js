@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const http = require('http').Server(app)
+const { Server } = require('socket.io')
+const io = new Server(http)
 
 // PWAs want HTTPS!
 function checkHttps(request, response, next) {
@@ -14,6 +16,10 @@ function checkHttps(request, response, next) {
 }
 
 app.all("*", checkHttps);
+
+io.on('connection', socket => {
+  io.emit('socket-connected', socket.id);
+})
 
 // Express port-switching logic
 // no touch
@@ -34,6 +40,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Start the listener!
-http.listen(port, () => {
+app.listen(port, () => {
   console.log("❇️ Express server is running on port");
 });
