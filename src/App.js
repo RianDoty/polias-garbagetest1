@@ -29,6 +29,7 @@ function App() {
         <p>
           
           Edit <code>src/App.js</code> and your changes will live-update automatically.
+          Please don't close me!
         </p>
         <span>latest is: {latest}</span>
         <a

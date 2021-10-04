@@ -21,7 +21,6 @@ io.on('connection', socket => {
   io.emit('socket-connected', socket.id);
   alert('connection');
 })
-console.log(io);
 
 // Express port-switching logic
 // no touch
@@ -42,6 +41,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Start the listener!
-app.listen(port, () => {
-  console.log("❇️ Express server is running on port");
+http.listen(port, () => {
+  console.log(`❇️ Express server is running on port ${port}`);
 });
