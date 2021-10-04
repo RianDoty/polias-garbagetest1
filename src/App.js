@@ -9,10 +9,12 @@ const { useState, useEffect } = React
 function App() {
   const [latest, setLatest] = useState()
   
+  const onConnected = (skt)=>{
+    setLatest(skt.id)
+  }
+  
   useEffect(()=>{
-    socket.on('socket-connected', ()=>{
-      setLatest
-    })
+    socket.on('socket-connected', onConnected)
   },[])
   
   return (
@@ -23,6 +25,7 @@ function App() {
           
           Edit <code>src/App.js</code> and your changes will live-update automatically.
         </p>
+        <span>{latest}</span>
         <a
           className="App-link"
           href="https://reactjs.org"
