@@ -21,6 +21,7 @@ io.on('connection', socket => {
   io.emit('socket-connected', socket.id);
   alert('connection');
 })
+console.log(io);
 
 // Express port-switching logic
 // no touch
