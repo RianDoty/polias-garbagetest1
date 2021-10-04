@@ -19,6 +19,7 @@ app.all("*", checkHttps);
 
 io.on('connection', socket => {
   io.emit('socket-connected', socket.id);
+  alert('connection');
 })
 
 // Express port-switching logic

@@ -17,9 +17,8 @@ function App() {
   
   useEffect(()=>{
     socket.on('socket-connected', (sckt) => {
-      setLatest(sckt.id)
+      setLatest(sckt)
       forceUpdate()
-      alert('connected')
     })
   },[])
   
