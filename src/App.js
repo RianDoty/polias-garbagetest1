@@ -1,11 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
+import socket from 'socket.io-client';
 import './App.css';
 
-const { useState } = React
+const { useState, useEffect } = React
 
 function App() {
   const [latest, setLatest] = useState()
+  
+  useEffect(()=>{
+    
+  },[])
   
   return (
     <div className="App">
