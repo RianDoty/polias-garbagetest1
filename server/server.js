@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const http = require('http').Server(app)
+const http = require('http').createServer(app)
 const { Server } = require('socket.io')
 const io = new Server(http)
 
@@ -19,7 +19,7 @@ app.all("*", checkHttps);
 
 io.on('connection', socket => {
   io.emit('socket-connected', socket.id);
-  alert('connection');
+  console.log('connection')
 })
 
 // Express port-switching logic
