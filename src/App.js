@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
-import socket from 'socket.io-client';
+import io from 'socket.io-client';
 import './App.css';
+const socket = io()
 
 const { useState, useEffect } = React
 
@@ -9,7 +10,9 @@ function App() {
   const [latest, setLatest] = useState()
   
   useEffect(()=>{
-    
+    socket.on('socket-connected', ()=>{
+      setLatest
+    })
   },[])
   
   return (
