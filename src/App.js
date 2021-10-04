@@ -6,15 +6,21 @@ const socket = io()
 
 const { useState, useEffect } = React
 
+function useForceUpdate(){
+    const [value, setValue] = useState(0); // integer state
+    return () => setValue(value => value + 1); // update the state to force render
+}
+
 function App() {
   const [latest, setLatest] = useState()
-  
-  const onConnected = (skt)=>{
-    setLatest(skt.id)
-  }
+  const forceUpdate = useForceUpdate()
   
   useEffect(()=>{
-    socket.on('socket-connected', onConnected)
+    socket.on('socket-connected', (sckt) => {
+      setLatest(sckt.id)
+      forceUpdate()
+      alert('connected')
+    })
   },[])
   
   return (
@@ -25,7 +31,7 @@ function App() {
           
           Edit <code>src/App.js</code> and your changes will live-update automatically.
         </p>
-        <span>{latest}</span>
+        <span>latest is: {latest}</span>
         <a
           className="App-link"
           href="https://reactjs.org"
