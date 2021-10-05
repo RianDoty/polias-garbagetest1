@@ -1,4 +1,6 @@
 import React from 'react';
+import Phaser from 'phaser';
+
 import logo from './logo.svg';
 import io from 'socket.io-client';
 import './App.css';
