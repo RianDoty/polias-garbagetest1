@@ -8,3 +8,6 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
+it('is totally poggers', ()=>{
+  expect('poggers').toBe('poggers')
+})

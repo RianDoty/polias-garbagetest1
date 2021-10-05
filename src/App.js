@@ -15,11 +15,12 @@ function useForceUpdate(){
 
 function App() {
   const [latest, setLatest] = useState()
-  const [count, setCount] = useState()
+  const [count, setCount] = useState(0)
   
   useEffect(()=>{
     socket.on('socket-connected', (socketID) => {
       setLatest(socketID)
+      setCount(c => c + 1)
     })
     
   },[])
@@ -33,6 +34,7 @@ function App() {
           Please don't close me!
         </p>
         <span>latest is: {latest}</span>
+        <span>count is : {count}</span>
         <a
           className="App-link"
           href="https://reactjs.org"
