@@ -15,10 +15,14 @@ function useForceUpdate(){
 
 function App() {
   const [latest, setLatest] = useState()
+  const [count, setCount] = useState()
   
   useEffect(()=>{
     socket.on('socket-connected', (socketID) => {
       setLatest(socketID)
+    })
+    document.addEventListener('keydown', ()=>{
+      
     })
   },[])
   
