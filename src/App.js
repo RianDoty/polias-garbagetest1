@@ -15,12 +15,10 @@ function useForceUpdate(){
 
 function App() {
   const [latest, setLatest] = useState()
-  const forceUpdate = useForceUpdate()
   
   useEffect(()=>{
-    socket.on('socket-connected', (sckt) => {
-      setLatest(sckt)
-      forceUpdate()
+    socket.on('socket-connected', (socketID) => {
+      setLatest(socketID)
     })
   },[])
   
