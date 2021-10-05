@@ -4,10 +4,7 @@ import io from 'socket.io-client';
 import './App.css';
 
 const isDev = process.env.NODE_ENV === 'development';
-
-const socket = isDev 
-? io.connect('http://localhost:3001') 
-: io.connect();
+const socket = io({path: '/api'})
 
 const { useState, useEffect } = React
 

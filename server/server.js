@@ -3,7 +3,9 @@ const path = require("path");
 const app = express();
 const http = require('http').Server(app)
 const { Server } = require('socket.io')
-const io = new Server(http)
+const io = new Server(http, {
+  path: '/api'
+})
 
 // PWAs want HTTPS!
 function checkHttps(request, response, next) {
