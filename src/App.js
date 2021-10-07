@@ -15,6 +15,7 @@ function App() {
   
   useSocket(socket, {
     'socket-connected': (id)=>{setCount(c=>c+1); setLatest(id)}
+       
   })
   
   
