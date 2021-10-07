@@ -19,8 +19,12 @@ function App() {
   useEffect(()=>{
     const callbacks = Object.entries(funcData);
     
-    callbacks.forEach(([key, callback]) => {
-      socket.on(key, callback))
+    const iterate = fkey => callbacks.forEach(([key, callback]) => socket[fkey](key, callback))
+    const connect = () => iterate('on');
+    const disconnect = () => iterate('off');
+    
+    connect()
+    return disconnect;
   },[])
   
   return (
