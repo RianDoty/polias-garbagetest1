@@ -13,19 +13,10 @@ function App() {
   const [latest, setLatest] = useState()
   const [count, setCount] = useState(0)
   
-  const funcData = {
-    'socket-connected': ()=>{setCount(c=>c+1)}
-  }
-  useEffect(()=>{
-    const callbacks = Object.entries(funcData);
-    
-    const iterate = fkey => callbacks.forEach(([key, callback]) => socket[fkey](key, callback))
-    const connect = () => iterate('on');
-    const disconnect = () => iterate('off');
-    
-    connect()
-    return disconnect;
-  },[])
+  useSocket(socket, {
+    'socket-connected': (id)=>{setCount(c=>c+1); setLatest(id)}
+  })
+  
   
   return (
     <div className="App">

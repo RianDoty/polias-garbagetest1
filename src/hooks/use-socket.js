@@ -2,17 +2,19 @@ import React from 'react';
 
 const { useState, useEffect } = React;
 
-const useSocket = (socket, callbacksData) => {
+const useSocket = (socket, callbackData) => {
   useEffect(()=>{
-    if (!(socket && callbacksData)) return;
+    if (!socket || !callbackData) return;
     
-    const callbacks = Object.entries(callbacksData);
+    const callbacks = Object.entries(callbackData);
     
-    const iterate = function(func) {return callbacks.forEach(function([key, value]) {return func(key, value)});}
+    const iterate = fkey => callbacks.forEach(([key, callback]) => socket[fkey](key, callback))
+    const connect = () => iterate('on');
+    const disconnect = () => iterate('off');
     
-    iterate(socket.on);
-    return () => iterate(socket.off);
-  },[])
+    connect()
+    return disconnect;
+  },[socket, callbackData])
 }
 
 export default useSocket;
