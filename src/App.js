@@ -2,16 +2,23 @@ import React from 'react';
 import logo from './logo.svg';
 import io from 'socket.io-client';
 import './styles/App.css';
+import useSocket from './hooks/use-socket.js'
 
 const socket = io({path: '/api'})
 
 const { useState, useEffect } = React
 
+
 function App() {
   const [latest, setLatest] = useState()
   const [count, setCount] = useState(0)
   
-
+  useSocket(socket, {
+    'socket-connected': function(socketID) {
+      setLatest(socketID)
+      setCount(count => count + 1)
+    }
+  })
   
   return (
     <div className="App">
