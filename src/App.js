@@ -6,8 +6,10 @@ import useSocket from './hooks/use-socket.js'
 
 const socket = io({path: '/api'})
 
-const { useState, useEffect } = React
+const { useState, useEffect, useCallback } = React
 
+
+//
 
 function App() {
   const [latest, setLatest] = useState()
@@ -15,7 +17,7 @@ function App() {
   
   useSocket(socket, {
     'socket-connected': (id)=>{setCount(c=>c+1); setLatest(id)}
-       
+    
   })
   
   
