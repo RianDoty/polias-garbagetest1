@@ -2,12 +2,12 @@ dependencies:
   concurrently: 5.1.0
   express: 4.17.1
   http-proxy-middleware: 1.0.0
-  phaser: 3.55.2
   react: 16.12.0
   react-dom: 16.12.0
   react-scripts: 3.4.0
   socket.io: 4.2.0
   socket.io-client: 4.2.0
+  wouter: 2.7.5
 packages:
   /@babel/code-frame/7.8.3:
     dependencies:
@@ -4263,10 +4263,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qerSRB0p+UDEssxTtm6EDKcE7W4OaoisfIMl4CngyEhjpYglocpNg6UEqCvemdGhosAsg4sO2dXJOdyBifPGCg==
-  /eventemitter3/4.0.7:
-    dev: false
-    resolution:
-      integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
   /events/3.1.0:
     dev: false
     engines:
@@ -7758,13 +7754,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
-  /path/0.12.7:
-    dependencies:
-      process: 0.11.10
-      util: 0.10.4
-    dev: false
-    resolution:
-      integrity: sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8=
   /pbkdf2/3.0.17:
     dependencies:
       create-hash: 1.2.0
@@ -7781,13 +7770,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
-  /phaser/3.55.2:
-    dependencies:
-      eventemitter3: 4.0.7
-      path: 0.12.7
-    dev: false
-    resolution:
-      integrity: sha512-amKXsbb2Ht29dGPKvt1edq3yGGYKtq8373GpJYGKPNPnneYY6MtVTOgjHDuZwtmUyK4v86FugkT3hzW/N4tjxQ==
   /picomatch/2.2.1:
     dev: false
     engines:
@@ -10690,12 +10672,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-evsa/lCAUkZInj23/g7TeTNqwPk=
-  /util/0.10.4:
-    dependencies:
-      inherits: 2.0.3
-    dev: false
-    resolution:
-      integrity: sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
   /util/0.11.1:
     dependencies:
       inherits: 2.0.3
@@ -11125,6 +11101,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-P1WjMrUB3qgJNI9jfmpZ/htmBEjFh//6l/5y8SD9hg1Ef5zTTVVoRjTrTEzPrNBQvmhMxkoTsjOXN10GWU7aCg==
+  /wouter/2.7.5:
+    dev: false
+    peerDependencies:
+      react: '>=16.8.0'
+    resolution:
+      integrity: sha512-TOI9gD1wa7a8wW+lh3rjg0C+MjYGKMV3eC+++6D+7n1z36ZJIBPWe2G9Hs1jYNPsV7oKiPTI3UFC5TGhZjQfrQ==
   /wrap-ansi/2.1.0:
     dependencies:
       string-width: 1.0.2
@@ -11282,9 +11264,9 @@ specifiers:
   concurrently: ^5.0.2
   express: ^4.17.1
   http-proxy-middleware: ^1.0.0
-  phaser: ^3.55.2
   react: ^16.12.0
   react-dom: ^16.12.0
   react-scripts: ^3.4.0
   socket.io: ^4.2.0
   socket.io-client: ^4.2.0
+  wouter: ^2.7.4
