@@ -12,7 +12,7 @@ const useSocket = (socket, callbacksData) => {
     
     iterate(socket.on);
     return () => iterate(socket.off);
-  },[socket, callbacksData])
+  },[])
 }
 
 export default useSocket;
