@@ -13,12 +13,7 @@ function App() {
   const [latest, setLatest] = useState()
   const [count, setCount] = useState(0)
   
-  useSocket(socket, {
-    'socket-connected': function(socketID) {
-      setLatest(socketID)
-      setCount(count => count + 1)
-    }
-  })
+  useEffect(()=>{},[])
   
   return (
     <div className="App">
