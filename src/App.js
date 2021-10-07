@@ -6,19 +6,21 @@ import useSocket from './hooks/use-socket.js'
 
 const socket = io({path: '/api'})
 
-const { useState, useEffect, useCallback } = React
+const { useState, useEffect, useMemo } = React
 
 
-//
+//THIS WHOLE THING IS FOR THE CELL BROCHURE
+//GET PICS OF ALL THE CELLS, MAKE A DRAG'N'DROP MATCHING GAME
+//TODO: THIS SHIT
 
 function App() {
   const [latest, setLatest] = useState()
   const [count, setCount] = useState(0)
   
-  useSocket(socket, {
+  useSocket(socket, useMemo(()=>({
     'socket-connected': (id)=>{setCount(c=>c+1); setLatest(id)}
     
-  })
+  }),[]))
   
   
   return (
