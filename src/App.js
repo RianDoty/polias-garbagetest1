@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import io from 'socket.io-client';
+import { } from 'wouter';
+
 import './styles/App.css';
 import useSocket from './hooks/use-socket.js'
 
