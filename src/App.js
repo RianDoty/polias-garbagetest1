@@ -31,7 +31,7 @@ function App() {
           Edit <code>src/App.js</code> and your changes will live-update automatically.
           Please don't close me!
         </p>
-        <span>latest is: {latest}</span>
+        <p>latest is: {latest}</p>
         <span>count is : {count}</span>
         <a
           className="App-link"
@@ -43,7 +43,7 @@ function App() {
         </a>
       </header>
       <main>
-        Hahahahahahaha
+        
       </main>
     </div>
   );
