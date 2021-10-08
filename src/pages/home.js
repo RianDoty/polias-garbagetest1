@@ -1,4 +1,6 @@
 import React from 'react';
 
 export const path = '/'
-export default function 
+export default function Home() {
+  
+}

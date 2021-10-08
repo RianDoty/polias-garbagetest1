@@ -1,12 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
-import io from 'socket.io-client';
 import { Route, Switch } from 'wouter';
 
 import './styles/App.css';
 import useSocket from './hooks/use-socket.js'
 
-const socket = io({path: '/api'})
 
 const { useState, useEffect, useMemo } = React
 
@@ -19,10 +17,10 @@ function App() {
   const [latest, setLatest] = useState()
   const [count, setCount] = useState(0)
   
-  useSocket(socket, useMemo(()=>({
+  useSocket({
     'socket-connected': (id)=>{setCount(c=>c+1); setLatest(id)}
     
-  }),[]))
+  })
   
   
   return (

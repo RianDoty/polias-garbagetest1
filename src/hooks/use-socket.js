@@ -1,8 +1,10 @@
 import React from 'react';
+import io from 'socket.io-client';
+const socket = io({path: '/api'})
 
 const { useState, useEffect } = React;
 
-const useSocket = (socket, callbackData) => {
+const useSocket = (callbackData) => {
   useEffect(()=>{
     if (!socket || !callbackData) return;
     
