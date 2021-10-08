@@ -42,6 +42,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <main>
+        Hahahahahahaha
+      </main>
     </div>
   );
 }
