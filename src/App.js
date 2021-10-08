@@ -26,23 +26,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and your changes will live-update automatically.
-          Please don't close me!
-        </p>
-        <p>latest is: {latest}</p>
-        <span>count is : {count}</span>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
       </header>
-      <main>
+      <main className='App-main'>
         
       </main>
     </div>
