@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import io from 'socket.io-client';
-import { } from 'wouter';
+import { Route, Switch } from 'wouter';
 
 import './styles/App.css';
 import useSocket from './hooks/use-socket.js'
@@ -31,7 +31,9 @@ function App() {
         
       </header>
       <main className='App-main'>
-        
+        <Switch>
+          <Route path='/'/>
+        </Switch>
       </main>
     </div>
   );
