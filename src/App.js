@@ -22,6 +22,8 @@ function App() {
     
   })
   
+  const r = (path, component) => <Route path={path}>{component}</Route>;
+  
   
   return (
     <div className="App">
@@ -30,7 +32,7 @@ function App() {
       </header>
       <main className='App-main'>
         <Switch>
-          <Route path='/'/>
+          
         </Switch>
       </main>
     </div>
