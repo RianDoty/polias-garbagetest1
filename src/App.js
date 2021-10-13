@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Route, Switch } from 'wouter';
+import PageRouter from './components/router';
 
 import './styles/App.css';
 import useSocket from './hooks/use-socket.js'
@@ -8,10 +9,6 @@ import useSocket from './hooks/use-socket.js'
 
 const { useState, useEffect, useMemo } = React
 
-
-//THIS WHOLE THING IS FOR THE CELL BROCHURE
-//GET PICS OF ALL THE CELLS, MAKE A DRAG'N'DROP MATCHING GAME
-//TODO: THIS SHIT
 
 function App() {
   const [latest, setLatest] = useState()
