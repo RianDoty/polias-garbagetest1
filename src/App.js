@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Route, Switch } from 'wouter';
+import { Router } from 'wouter';
 import PageRouter from './components/router';
 
 import './styles/App.css';
 import useSocket from './hooks/use-socket.js'
+import useHashLocation from './hooks/wouter-hash'
 
 
 const { useState, useEffect, useMemo } = React
@@ -19,18 +20,13 @@ function App() {
     
   })
   
-  const r = (path, component) => <Route path={path}>{component}</Route>;
-  
-  
   return (
     <div className="App">
       <header className="App-header">
         
       </header>
       <main className='App-main'>
-        <Switch>
-          
-        </Switch>
+        <PageRouter/>
       </main>
     </div>
   );
