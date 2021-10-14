@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Router hook={useHashLocation}>
-        
+        <TopBar/>
         <main className="app-main">
           <PageRouter />
         </main>
