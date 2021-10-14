@@ -4,8 +4,10 @@ import { Router } from "wouter";
 import PageRouter from "./components/router";
 
 import "./styles/App.css";
-import useSocket from "./hooks/use-socket.js";
+import useSocket from "./hooks/use-socket";
 import useHashLocation from "./hooks/wouter-hash";
+
+import TopBar from './components/top-bar';
 
 const { useState, useEffect, useMemo } = React;
 
@@ -23,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Router hook={useHashLocation}>
-        <header className="App-header"></header>
+        
         <main className="App-main">
           <PageRouter />
         </main>

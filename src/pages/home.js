@@ -1,5 +1,9 @@
 import React from 'react';
 
 export default function Home() {
-  return <h1>Bazinga.</h1>
+  return (
+    <div>
+      
+    </div>
+  )
 }
