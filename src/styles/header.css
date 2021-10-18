@@ -1,17 +1,23 @@
-.common-header {
+.common-header-container {
   /*Sets the header at the top of the page, all the way across, 57px high*/
   position:fixed;
   top:0;
   width:100%;
   height: var(--header-height);
   
-  display:flex;
-  align-items: center;
-  
   background-color: var(--header);
   box-shadow: 0px 2px 4px 2px var(--shadow);
 }
 
+.common-header {
+  display: flex;
+  align-items: center;
+}
+
 .header-logo h1 {
   margin-top:0;
+}
+
+* {
+  outline: auto;
 }

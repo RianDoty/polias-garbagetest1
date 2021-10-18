@@ -14,8 +14,9 @@ export default function TopBar() {
   return (
     <header class='common-header-container'>
       <div class='common-header narrow'>
-      
-      
+        <Logo/>
+        <div class='header-content'></div>
+        <div class='header-profile'></div>
       </div>
     </header>
   )
