@@ -12,10 +12,11 @@ const Logo = () => {
 
 export default function TopBar() {
   return (
-    <header class='common-header'>
-      <Logo/>
-      <div class='header-content'></div>
-      <div class='header-profile'></div>
+    <header class='common-header-container'>
+      <div class='common-header narrow'>
+      
+      
+      </div>
     </header>
   )
 }

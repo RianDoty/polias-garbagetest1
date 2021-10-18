@@ -6,6 +6,7 @@
   height: var(--header-height);
   
   display:flex;
+  align-items: center;
   
   background-color: var(--header);
   box-shadow: 0px 2px 4px 2px var(--shadow);
