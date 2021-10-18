@@ -1,5 +1,4 @@
 .common-header {
-  
   /*Sets the header at the top of the page, all the way across, 57px high*/
   position:fixed;
   top:0;
@@ -9,7 +8,7 @@
   display:flex;
   
   background-color: var(--header);
-  box-shadow: 5px 5px 5px 5px var(--shadow);
+  box-shadow: 0px 2px 4px 2px var(--shadow);
 }
 
 .header-logo h1 {
