@@ -16,7 +16,7 @@ const useSocket = (callbackData) => {
     
     connect()
     return disconnect;
-  },[socket, callbackData])
+  },[callbackData])
 }
 
 export default useSocket;

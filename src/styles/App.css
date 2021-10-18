@@ -26,6 +26,14 @@ body {
   color: #61dafb;
 }
 
+.app-main {
+  position: absolute;
+  top: var(--header-height);
+  bottom:0;
+  left:0;
+  right:0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
