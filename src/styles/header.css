@@ -8,7 +8,8 @@
   
   display:flex;
   
-  background-color: #112;
+  background-color: var(--header);
+  box-shadow: 5px 5px 5px 5px var(--shadow);
 }
 
 .header-logo h1 {

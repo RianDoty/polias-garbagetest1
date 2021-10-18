@@ -17,7 +17,8 @@ code {
   --header-height: 57px;
   
   /*palette*/
-  --background: #333;
+  --background: #223;
   --highlight: #18C;
-  --shadow: #1A170F;
+  --header: #222;
+  --shadow: #111;
 }

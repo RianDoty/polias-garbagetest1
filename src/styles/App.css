@@ -1,5 +1,5 @@
 body {
-  background-color: #223;
+  background-color: var(--background);
   color: white;
 }
 
@@ -20,10 +20,6 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .app-main {
