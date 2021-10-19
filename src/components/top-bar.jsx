@@ -10,6 +10,10 @@ const Logo = () => {
   )
 }
 
+const Profile = () => {
+  return 
+}
+
 export default function TopBar() {
   return (
     <header class='common-header-container'>
