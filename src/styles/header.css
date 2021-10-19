@@ -20,6 +20,14 @@
   margin: auto 0;
 }
 
+.header-content {
+  flex-grow: 1;
+}
+
+.narrow {
+  max-width: 1000px;
+}
+
 * {
   outline: auto;
 }
