@@ -10,9 +10,21 @@ const Logo = () => {
   )
 }
 
+const Content = () => {
+  return (
+    <div class='header-content'>
+      <h1>yes</h1>
+      <h2>haha</h2>
+      <h3>wonderful</h3>
+    </div>
+  )
+}
+
 const Profile = () => {
   return (
-    <d
+    <div class='header-profile'>
+      Rian
+    </div>
   )
 }
 
@@ -21,8 +33,8 @@ export default function TopBar() {
     <header class='common-header-container'>
       <div class='common-header narrow'>
         <Logo/>
-        <div class='header-content'></div>
-        <div class='header-profile'></div>
+        <Content/>
+        <Profile/>
       </div>
     </header>
   )
