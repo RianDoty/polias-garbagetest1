@@ -4,7 +4,7 @@ import { Router } from "wouter";
 import PageRouter from "./components/router";
 
 import "./styles/App.css";
-import useSocket from "./hooks/use-socket";
+import useSocket from "./hooks/socket";
 import useHashLocation from "./hooks/wouter-hash";
 
 import TopBar from './components/top-bar';

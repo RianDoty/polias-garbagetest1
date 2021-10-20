@@ -13,9 +13,7 @@ const Logo = () => {
 const Content = () => {
   return (
     <div class='header-content'>
-      <h1>yes</h1>
-      <h2>haha</h2>
-      <h3>wonderful</h3>
+      
     </div>
   )
 }
@@ -23,7 +21,7 @@ const Content = () => {
 const Profile = () => {
   return (
     <div class='header-profile'>
-      Rian
+      
     </div>
   )
 }
