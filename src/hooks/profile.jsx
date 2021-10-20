@@ -12,6 +12,9 @@ function useForceUpdate(){
 const useProfile = () => {
   const forceUpdate = useForceUpdate()
   
+  const setProfile = (key, value) => {profile[key] = value; forceUpdate()};
+  
+  return profile, setProfile
 }
 
 export default useProfile;
