@@ -11,16 +11,11 @@ import TopBar from './components/top-bar';
 
 const { useState, useEffect, useMemo } = React;
 
-function App() {
-  const [latest, setLatest] = useState();
-  const [count, setCount] = useState(0);
 
-  useSocket({
-    "socket-connected": id => {
-      setCount(c => c + 1);
-      setLatest(id);
-    }
-  });
+
+
+function App() {
+  const [name, setName] = useState('unknown')
 
   return (
     <div className="App">
