@@ -25,7 +25,7 @@
   margin-right: 10px;
 }
 
-.header-logo h1 {
+.header-logo * {
   margin: auto 0;
 }
 
