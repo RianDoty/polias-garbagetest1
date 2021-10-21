@@ -10,10 +10,18 @@ const Logo = () => {
   )
 }
 
+const ContentItem = ({children}) => {
+  return (
+    <div class='header-content-item'>
+      {children}
+    </div>
+  )
+}
+
 const Content = () => {
   return (
     <div class='header-content'>
-      
+      <ContentItem><h4>About</h4></ContentItem>
     </div>
   )
 }

@@ -15,6 +15,7 @@
   margin: 0 auto;
   align-items: center;
   height: 100%;
+  width: calc(100% - 10px);
 }
 
 .header-logo h1 {
@@ -30,8 +31,10 @@
   align-items: center;
 }
 
-.header-content * {
+.header-content-item {
+  height: 100%;
   margin: 0 10px;
+  overflow: hide;
 }
 
 .narrow {
