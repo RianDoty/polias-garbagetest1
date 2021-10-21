@@ -15,7 +15,14 @@
   margin: 0 auto;
   align-items: center;
   height: 100%;
-  width: calc(100% - 10px);
+}
+
+.header-logo {
+  margin-left: 10px;
+}
+
+.header-profile {
+  margin-right: 10px;
 }
 
 .header-logo h1 {
