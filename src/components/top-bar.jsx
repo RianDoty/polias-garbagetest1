@@ -21,7 +21,9 @@ const ContentItem = ({children}) => {
 const Content = () => {
   return (
     <div class='header-content'>
-      <ContentItem><h4>About</h4></ContentItem>
+      <ContentItem>
+        <h4>About</h4>
+      </ContentItem>
     </div>
   )
 }
