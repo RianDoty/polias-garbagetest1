@@ -21,7 +21,7 @@ export default function Home() {
         <Cell wClass='w-1-2'>
           <CellHeader>Enter your name</CellHeader>
           
-          <h1>Enter your name</h1>
+          <h1></h1>
         </Cell>
         <Cell wClass='w-3-5'>
           <h1>Lorem Ipsum</h1>
