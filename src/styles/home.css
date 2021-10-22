@@ -12,3 +12,24 @@
   color: grey;
   margin-top: 5px;
 }
+
+/*Sections of a grid*/
+.cell {
+   margin: 0 8px;
+}
+
+.cell:first-child {
+  margin-left: 0;
+}
+
+.cell:last-child {
+  margin-right: 0;
+}
+
+.w-3-5 {
+  width: 60%;
+}
+
+.w-2-5 {
+  width: 40%;
+}

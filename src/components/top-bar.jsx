@@ -31,7 +31,7 @@ const Content = () => {
 const Profile = () => {
   return (
     <div class='header-profile'>
-      
+      <h1>Your Name</h1>
     </div>
   )
 }
