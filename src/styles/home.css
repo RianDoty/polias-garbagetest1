@@ -4,7 +4,11 @@
 }
 
 .dash-section:not(:first-child) {
-  border-top: 1px solid #AAB;
+  border-top: 1px solid var(--highlight);
 }
 
 
+.bottom-logo {
+  color: grey;
+  margin-top: 5px;
+}

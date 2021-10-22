@@ -3,6 +3,7 @@ import React from 'react';
 import '../styles/home.css';
 
 const Section = ({children}) => (<div class='dash-section'>{children}</div>)
+const BottomLogo = () => (<h3 class='bottom-logo'>Polias</h3>)
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Section>
       
       </Section>
+      <Section><BottomLogo/></Section>
     </div>
   )
 }
