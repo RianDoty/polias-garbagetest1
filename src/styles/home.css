@@ -23,9 +23,22 @@
   padding: 15px;
   overflow: hidden;
   
-  background-color: var(--shade);
+  background-color: var(--shade2);
   border: 1px solid #111;
   border-radius: 3px;
+  box-shadow: 0 2px rgb(0 0 0 / 13%);
+}
+
+.cell-header {
+  margin: -15px -15px 15px -15px;
+  
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  
+  padding: 5px;
+  background-color: var(--shade);
+  border-bottom: solid 1px var(--shadow);
 }
 
 .cell:first-child {
@@ -46,8 +59,4 @@
 
 .w-1-2 {
   width: 50%;
-}
-
-.dash-box {
-  
 }

@@ -5,7 +5,7 @@ import '../styles/home.css';
 const Section = ({children}) => (<div class='dash-section'>{children}</div>)
 const BottomLogo = () => (<h3 class='bottom-logo'>Polias</h3>)
 const Cell = ({children, wClass}) => (<div class={`cell ${wClass}`}><div class='dash-box'>{children}</div></div>)
-
+const CellHeader = ({children}) => (<div class='cell-header'>{children}</div>)
 
 
 export default function Home() {
@@ -19,6 +19,8 @@ export default function Home() {
       <h2>Get Started</h2>
       <Section>
         <Cell wClass='w-1-2'>
+          <CellHeader>Enter your name</CellHeader>
+          
           <h1>Enter your name</h1>
         </Cell>
         <Cell wClass='w-3-5'>
