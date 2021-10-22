@@ -1,4 +1,7 @@
 import React from 'react';
+import { useContext } from 'react';
+
+import UserContext from '../contexts/user';
 
 import '../styles/home.css';
 
@@ -9,6 +12,8 @@ const CellHeader = ({children}) => (<div class='cell-header'>{children}</div>)
 
 
 export default function Home() {
+  const user = useContext(UserContext)
+  
   return (
     <div class='narrow'>
       <Section>
@@ -20,8 +25,7 @@ export default function Home() {
       <Section>
         <Cell wClass='w-1-2'>
           <CellHeader>Enter your name</CellHeader>
-          
-          <h1></h1>
+          Right here. this is what you really wanted.
         </Cell>
         <Cell wClass='w-3-5'>
           <h1>Lorem Ipsum</h1>

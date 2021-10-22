@@ -5,3 +5,5 @@ const useUser = () => {
   
   return {name, setName}
 }
+
+export default useUser
