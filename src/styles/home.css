@@ -15,15 +15,16 @@
 
 /*Sections of a grid*/
 .cell {
-   margin: 0 8px;
+  padding: 0 8px;
+  display: inline-block;
 }
 
 .cell:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .cell:last-child {
-  margin-right: 0;
+  padding-right: 0;
 }
 
 .w-3-5 {
@@ -32,4 +33,8 @@
 
 .w-2-5 {
   width: 40%;
+}
+
+.dash-box {
+  
 }

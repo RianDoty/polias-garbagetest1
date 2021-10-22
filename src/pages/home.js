@@ -4,6 +4,8 @@ import '../styles/home.css';
 
 const Section = ({children}) => (<div class='dash-section'>{children}</div>)
 const BottomLogo = () => (<h3 class='bottom-logo'>Polias</h3>)
+const Cell = ({children, wClass}) => (<div class={`cell ${wClass}`}><div class='dash-box'>{children}</div></div>)
+
 
 export default function Home() {
   return (
@@ -15,7 +17,14 @@ export default function Home() {
       </Section>
       <h2>Get Started</h2>
       <Section>
-      
+        <Cell wClass='w-3-5'>
+          <h1>Lorem Ipsum</h1>
+          <p>dolor sit amet or whatever</p>
+        </Cell>
+        <Cell wClass='w-2-5'>
+          <h1>Lorem Ipsum</h1>
+          <p>dolor sit amet or whatever</p>
+        </Cell>
       </Section>
       <Section><BottomLogo/></Section>
     </div>
