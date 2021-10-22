@@ -15,7 +15,7 @@
 
 /*Sections of a grid*/
 .cell {
-  padding: 0 8px;
+  padding: 8px;
   display: inline-block;
 }
 
