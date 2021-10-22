@@ -15,11 +15,11 @@ import UserContext from "./contexts/user";
 const { useState, useEffect, useMemo } = React;
 
 function App() {
-  const [name, setName] = useState("unknown");
-
+  const user = useUser()
+  
   return (
     <div className="App">
-      <UserContext.Provider>
+      <UserContext.Provider value={user}>
         <Router hook={useHashLocation}>
           <TopBar />
           <main className="app-main">

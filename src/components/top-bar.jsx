@@ -1,4 +1,7 @@
 import React from 'react';
+import { useContext } from 'react';
+
+import UserContext from '../contexts/user';
 
 import '../styles/header.css';
 
@@ -29,9 +32,10 @@ const Content = () => {
 }
 
 const Profile = () => {
+  const user = useContext(UserContext);
   return (
     <div class='header-profile'>
-      <h1>Your Name</h1>
+      <h1>{user.name}</h1>
     </div>
   )
 }
