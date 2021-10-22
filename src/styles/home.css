@@ -1,0 +1,8 @@
+.dash-section {
+  margin: 0 10px;
+  padding: 10px 0;
+}
+
+.dash-section:not(:first-child) {
+  border-top: 1px solid #222;
+}
