@@ -19,6 +19,15 @@
   display: inline-block;
 }
 
+.dash-box {
+  padding: 15px;
+  overflow: hidden;
+  
+  background-color: var(--shade);
+  border: 1px solid #111;
+  border-radius: 3px;
+}
+
 .cell:first-child {
   padding-left: 0;
 }
@@ -33,6 +42,10 @@
 
 .w-2-5 {
   width: 40%;
+}
+
+.w-1-2 {
+  width: 50%;
 }
 
 .dash-box {

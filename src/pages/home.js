@@ -7,6 +7,7 @@ const BottomLogo = () => (<h3 class='bottom-logo'>Polias</h3>)
 const Cell = ({children, wClass}) => (<div class={`cell ${wClass}`}><div class='dash-box'>{children}</div></div>)
 
 
+
 export default function Home() {
   return (
     <div class='narrow'>
@@ -17,6 +18,9 @@ export default function Home() {
       </Section>
       <h2>Get Started</h2>
       <Section>
+        <Cell wClass='w-1-2'>
+          <h1>Enter your name</h1>
+        </Cell>
         <Cell wClass='w-3-5'>
           <h1>Lorem Ipsum</h1>
           <p>dolor sit amet or whatever</p>
