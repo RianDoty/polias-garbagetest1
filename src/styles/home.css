@@ -33,10 +33,10 @@
   margin: -15px -15px 15px -15px;
   
   font-weight: bold;
-  font-size: 15px;
+  font-size: 13px;
   text-transform: uppercase;
   
-  padding: 5px;
+  padding: 5px 10px;
   background-color: var(--shade);
   border-bottom: solid 1px var(--shadow);
 }

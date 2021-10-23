@@ -12,6 +12,16 @@ const CellHeader = ({children}) => (<div class='cell-header'>{children}</div>)
 
 const NameEntry = ({user}) => {
   
+  function onSubmit(e) {
+    e.preventDefault()
+  }
+  
+  return (
+    <form onSubmit={onSubmit}>
+      <input type='text'/>
+      <input type='submit'/>
+    </form>
+  )
 }
 
 export default function Home() {
@@ -28,7 +38,7 @@ export default function Home() {
       <Section>
         <Cell wClass='w-1-2'>
           <CellHeader>Enter your name</CellHeader>
-          
+          <NameEntry/>
         </Cell>
         <Cell wClass='w-3-5'>
           <CellHeader>Current games</CellHeader>
