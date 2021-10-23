@@ -10,6 +10,9 @@ const BottomLogo = () => (<h3 class='bottom-logo'>Polias</h3>)
 const Cell = ({children, wClass}) => (<div class={`cell ${wClass}`}><div class='dash-box'>{children}</div></div>)
 const CellHeader = ({children}) => (<div class='cell-header'>{children}</div>)
 
+const NameEntry = ({user}) => {
+  
+}
 
 export default function Home() {
   const user = useContext(UserContext)
