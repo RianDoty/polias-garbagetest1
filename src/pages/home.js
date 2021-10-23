@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 
 import UserContext from '../contexts/user';
 
@@ -11,14 +11,17 @@ const Cell = ({children, wClass}) => (<div class={`cell ${wClass}`}><div class='
 const CellHeader = ({children}) => (<div class='cell-header'>{children}</div>)
 
 const NameEntry = ({user}) => {
+  const [inpVal, updateInpVal] = useState('')
   
   function onSubmit(e) {
     e.preventDefault()
+    
+    user.setName(inpVal)
   }
   
   return (
-    <form onSubmit={onSubmit}>
-      <input type='text'/>
+    <form onSubmit={onSubmit} class='name-entry-form'>
+      <input type='text' value={inpVal} onChange={e=>{updateInpVal(e.target.value)}}/>
       <input type='submit'/>
     </form>
   )
@@ -38,7 +41,7 @@ export default function Home() {
       <Section>
         <Cell wClass='w-1-2'>
           <CellHeader>Enter your name</CellHeader>
-          <NameEntry/>
+          <NameEntry user={user}/>
         </Cell>
         <Cell wClass='w-3-5'>
           <CellHeader>Current games</CellHeader>
