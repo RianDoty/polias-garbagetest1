@@ -25,14 +25,14 @@ export default function Home() {
       <Section>
         <Cell wClass='w-1-2'>
           <CellHeader>Enter your name</CellHeader>
-          Right here. this is what you really wanted.
+          
         </Cell>
         <Cell wClass='w-3-5'>
-          <h1>Lorem Ipsum</h1>
+          <CellHeader>Current games</CellHeader>
           <p>dolor sit amet or whatever</p>
         </Cell>
         <Cell wClass='w-2-5'>
-          <h1>Lorem Ipsum</h1>
+          <CellHeader>Make a game</CellHeader>
           <p>dolor sit amet or whatever</p>
         </Cell>
       </Section>
