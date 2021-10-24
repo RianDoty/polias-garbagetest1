@@ -76,6 +76,19 @@
   margin: 0 3px;
 }
 
+.name-entry-form input[type='submit'] {
+  background: green;
+  color: white;
+  border: 1px solid darkgreen;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.name-entry-form input[type='submit']:hover {
+  background: forestgreen;
+  color: white;
+}
+
 .header-profile {
   overflow: hidden;
   max-height: 100%;

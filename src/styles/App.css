@@ -45,6 +45,10 @@ body {
 }
 
 .error {
-  color: red;
-  background: rgba(1, 0.5, 0.5, 0.5)
+  background: maroon;
+  border: 1px solid red;
+  border-radius: 2px;
+  padding: 1px;
+  margin: 1px;
+  display: inline-block;
 }

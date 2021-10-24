@@ -31,6 +31,7 @@ const NameEntry = ({user}) => {
     <form onSubmit={onSubmit} class='name-entry-form'>
       <input type='text' value={inpVal} onChange={e=>{updateInpVal(e.target.value)}}/>
       <input type='submit' value='✓'/>
+      <br/>
       {errComponent}
     </form>
   )
