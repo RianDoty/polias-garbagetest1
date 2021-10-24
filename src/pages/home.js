@@ -12,17 +12,26 @@ const CellHeader = ({children}) => (<div class='cell-header'>{children}</div>)
 
 const NameEntry = ({user}) => {
   const [inpVal, updateInpVal] = useState('')
+  const [err, setErr] = useState('')
   
   function onSubmit(e) {
     e.preventDefault()
     
-    user.setName(inpVal)
+    setErr('')
+    if (inpVal) user.setName(inpVal);
+    else setErr('Invalid name!');
+  }
+  
+  let errComponent;
+  if (err) {
+    errComponent = <span class='error'>{err}</span>
   }
   
   return (
     <form onSubmit={onSubmit} class='name-entry-form'>
       <input type='text' value={inpVal} onChange={e=>{updateInpVal(e.target.value)}}/>
-      <input type='submit' value='Confirm'/>
+      <input type='submit' value='✓'/>
+      {errComponent}
     </form>
   )
 }

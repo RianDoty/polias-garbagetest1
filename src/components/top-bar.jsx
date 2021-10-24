@@ -35,7 +35,7 @@ const Profile = () => {
   const user = useContext(UserContext);
   return (
     <div class='header-profile'>
-      <h1>{user.name}</h1>
+      <span>{user.name}</span>
     </div>
   )
 }
