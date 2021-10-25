@@ -4,7 +4,7 @@ import { Router, useRoute } from "wouter";
 import PageRouter from "./components/router";
 
 import "./styles/App.css";
-import useSocket from "./hooks/socket";
+import {useSocket, useSocketFetch} from "./hooks/socket";
 import useUser from "./hooks/user";
 
 import TopBar from "./components/top-bar";

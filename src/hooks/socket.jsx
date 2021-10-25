@@ -19,9 +19,9 @@ const useSocket = (callbackData) => {
   },[callbackData])
 }
 
-const useSocketFetch = (name, ack) => {
+export const useSocketFetch = (name, ack) => {
   useEffect(()=>{
-    socket.emit('name', ack)
+    socket.emit(name, ack)
   },[]);
 }
 
