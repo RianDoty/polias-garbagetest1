@@ -19,9 +19,9 @@ const useSocket = (callbackData) => {
   },[callbackData])
 }
 
-const getFromSocket = (name) => {
+const useSocketFetch = (name) => {
   return useMemo(()=>{
-    
+      return socket.emit()
   },[])
 }
 
