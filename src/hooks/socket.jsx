@@ -4,7 +4,9 @@ const socket = io({path: '/api'})
 
 //Connects a list of functions to the socket
 //Functions in {eventName: func} format
-const useSocket = (callbackData) => {
+const useSocket = () => socket;
+
+export const useSocketCallbacks = (callbackData) => {
   useEffect(()=>{
     if (!socket || !callbackData) return;
     

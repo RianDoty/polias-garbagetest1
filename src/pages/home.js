@@ -44,6 +44,9 @@ const NameEntry = ({user}) => {
 //Displays a list of every ongoing server
 const ServerList = () => {}
 
+//Displays a form for naming and creating a server
+const ServerCreator = () => {}
+
 //Page
 export default function Home() {
   const user = useContext(UserContext)
