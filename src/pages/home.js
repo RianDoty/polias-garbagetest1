@@ -5,10 +5,10 @@ import UserContext from '../contexts/user';
 
 import '../styles/home.css';
 
-const Section = ({children}) => (<div class='dash-section'>{children}</div>)
-const BottomLogo = () => (<h3 class='bottom-logo'>Polias</h3>)
-const Cell = ({children, wClass}) => (<div class={`cell ${wClass}`}><div class='dash-box'>{children}</div></div>)
-const CellHeader = ({children}) => (<div class='cell-header'>{children}</div>)
+const Section = ({children}) => (<div className='dash-section'>{children}</div>)
+const BottomLogo = () => (<h3 className='bottom-logo'>Polias</h3>)
+const Cell = ({children, wClass}) => (<div className={`cell ${wClass}`}><div class='dash-box'>{children}</div></div>)
+const CellHeader = ({children}) => (<div className='cell-header'>{children}</div>)
 
 const NameEntry = ({user}) => {
   const [inpVal, updateInpVal] = useState('')
@@ -28,7 +28,7 @@ const NameEntry = ({user}) => {
   }
   
   return (
-    <form onSubmit={onSubmit} class='name-entry-form'>
+    <form onSubmit={onSubmit} className='name-entry-form'>
       <input type='text' value={inpVal} onChange={e=>{updateInpVal(e.target.value)}}/>
       <input type='submit' value='✓'/>
       <br/>

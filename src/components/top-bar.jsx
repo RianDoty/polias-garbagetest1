@@ -7,7 +7,7 @@ import '../styles/header.css';
 
 const Logo = () => {
   return (
-    <div class='header-logo'>
+    <div className='header-logo'>
       <h1>Polias</h1>
     </div>
   )
@@ -15,7 +15,7 @@ const Logo = () => {
 
 const ContentItem = ({children}) => {
   return (
-    <div class='header-content-item'>
+    <div className='header-content-item'>
       {children}
     </div>
   )
@@ -23,7 +23,7 @@ const ContentItem = ({children}) => {
 
 const Content = () => {
   return (
-    <div class='header-content'>
+    <div className='header-content'>
       <ContentItem>
         <h4>About</h4>
       </ContentItem>
@@ -34,7 +34,7 @@ const Content = () => {
 const Profile = () => {
   const user = useContext(UserContext);
   return (
-    <div class='header-profile'>
+    <div className='header-profile'>
       <span>{user.name}</span>
     </div>
   )
@@ -42,8 +42,8 @@ const Profile = () => {
 
 export default function TopBar() {
   return (
-    <header class='common-header-container'>
-      <div class='common-header narrow'>
+    <header className='common-header-container'>
+      <div className='common-header narrow'>
         <Logo/>
         <Content/>
         <Profile/>
