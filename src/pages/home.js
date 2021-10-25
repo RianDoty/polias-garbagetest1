@@ -28,7 +28,7 @@ const NameEntry = ({user}) => {
   
   let errComponent;
   if (err) {
-    errComponent = <span className='error'>{err}</span>
+    errComponent = <span className='error'>{err} idiot</span>
   }
   
   return (
