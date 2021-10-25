@@ -5,14 +5,11 @@ import PageRouter from "./components/router";
 
 import "./styles/App.css";
 import useSocket from "./hooks/socket";
-import useHashLocation from "./hooks/wouter-hash";
 import useUser from "./hooks/user";
 
 import TopBar from "./components/top-bar";
 
 import UserContext from "./contexts/user";
-
-const { useState, useEffect, useMemo } = React;
 
 function App() {
   const user = useUser()

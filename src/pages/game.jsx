@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default function Game({code}) {
+export default function Game({params}) {
+  const {code} = params;
+  
   return (
     <>
-      <div>game</div>
-      <p>code: {code}</p>
+      
     </>
   )
 }

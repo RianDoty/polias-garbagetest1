@@ -24,7 +24,7 @@ const NameEntry = ({user}) => {
   
   let errComponent;
   if (err) {
-    errComponent = <span class='error'>{err}</span>
+    errComponent = <span className='error'>{err}</span>
   }
   
   return (
@@ -41,7 +41,7 @@ export default function Home() {
   const user = useContext(UserContext)
   
   return (
-    <div class='narrow'>
+    <div className='narrow'>
       <Section>
         <h1>Hello, and welcome!</h1>
         <p>Polias is a deception game where <em>everyone</em> gets to have fun.</p>
