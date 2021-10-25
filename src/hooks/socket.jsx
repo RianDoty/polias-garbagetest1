@@ -1,7 +1,9 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 import io from 'socket.io-client';
 const socket = io({path: '/api'})
 
+//Connects a list of functions to the socket
+//Functions in {eventName: func} format
 const useSocket = (callbackData) => {
   useEffect(()=>{
     if (!socket || !callbackData) return;
@@ -15,6 +17,12 @@ const useSocket = (callbackData) => {
     connect()
     return disconnect;
   },[callbackData])
+}
+
+const getFromSocket = (name) => {
+  return useMemo(()=>{
+    
+  },[])
 }
 
 export default useSocket;
