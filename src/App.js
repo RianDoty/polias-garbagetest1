@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import { Router } from "wouter";
+import { Router, useRoute } from "wouter";
 import PageRouter from "./components/router";
 
 import "./styles/App.css";
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={user}>
-        <Router hook={useHashLocation}>
+        <Router>
           <TopBar />
           <main className="app-main">
             <PageRouter />
