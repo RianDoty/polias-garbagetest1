@@ -9,7 +9,7 @@ export default function PageRouter() {
   return (
     <Switch>
       <Route path='/' component={Home}/>
-      <Route path='/game/:code*' component={Game}/>
+      <Route path='/game/:code' component={Game}/>
     </Switch>
   )
 }

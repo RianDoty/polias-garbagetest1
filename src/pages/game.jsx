@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function Game() {
+export default function Game({code}) {
   return (
-    <div>game</div>
+    <>
+      <div>game</div>
+      <p>code: {code}</p>
+    </>
   )
 }
