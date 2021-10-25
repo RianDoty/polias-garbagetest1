@@ -5,11 +5,13 @@ import UserContext from '../contexts/user';
 
 import '../styles/home.css';
 
+//Components
 const Section = ({children}) => (<div className='dash-section'>{children}</div>)
 const BottomLogo = () => (<h3 className='bottom-logo'>Polias</h3>)
-const Cell = ({children, wClass}) => (<div className={`cell ${wClass}`}><div class='dash-box'>{children}</div></div>)
+const Cell = ({children, wClass, header}) => (<div className={`cell ${wClass}`}><div class='dash-box'><CellHeader>{header}</CellHeader>{children}</div></div>)
 const CellHeader = ({children}) => (<div className='cell-header'>{children}</div>)
 
+//Displays a form for the user to enter their name
 const NameEntry = ({user}) => {
   const [inpVal, updateInpVal] = useState('')
   const [err, setErr] = useState('')
@@ -37,6 +39,10 @@ const NameEntry = ({user}) => {
   )
 }
 
+//Displays a list of every ongoing server
+const ServerList = () => {}
+
+//Page
 export default function Home() {
   const user = useContext(UserContext)
   
@@ -49,16 +55,13 @@ export default function Home() {
       </Section>
       <h2>Get Started</h2>
       <Section>
-        <Cell wClass='w-1-2'>
-          <CellHeader>Enter your name</CellHeader>
+        <Cell wClass='w-1-2' header='Enter your Name'>
           <NameEntry user={user}/>
         </Cell>
-        <Cell wClass='w-3-5'>
-          <CellHeader>Current games</CellHeader>
+        <Cell wClass='w-3-5' header='Current Games'>
           <p>dolor sit amet or whatever</p>
         </Cell>
-        <Cell wClass='w-2-5'>
-          <CellHeader>Make a game</CellHeader>
+        <Cell wClass='w-2-5' header='Make a game'>
           <p>dolor sit amet or whatever</p>
         </Cell>
       </Section>
