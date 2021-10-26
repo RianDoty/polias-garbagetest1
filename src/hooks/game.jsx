@@ -1,16 +1,25 @@
 import { useState } from 'react';
 
-import useSocketFetch from './socket';
+import {useSocketFetch, useSocketCallbacks} from './socket';
 import useVolatileState from './volatile-state';
 
 export default function useGame(code) {
   const [state, setState] = useState(0);
-  const [users, setUsers] = useVolatileState({});
+  const [players, setPlayers] = useVolatileState({});
   
-  //Fetch data about the game from the server
+  //Fetch data
   useSocketFetch('get-game', code, (gData)=>{
+    const {state, players} = gData;
     
+    setState(state);
+    setPlayers(players);
   })
   
-  return {state, setState, users, setUsers}
+  //Sync data
+  useSocketCallbacks({
+    'update-game-state': (s) => setState(s),
+    'update-game-players': (p) => setPlayers(p)
+  })
+  
+  return {state, setState, players, setPlayers}
 }
