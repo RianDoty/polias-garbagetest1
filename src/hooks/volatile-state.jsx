@@ -11,5 +11,5 @@ export default function useVolatileState(def) {
   const [state, setState] = useState(def);
   const forceUpdate = useForceUpdate()
   
-  return (v) => {setState(v); forceUpdate()};
+  return [state, (v) => {setState(v); forceUpdate()}];
 }

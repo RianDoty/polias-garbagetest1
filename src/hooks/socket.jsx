@@ -21,9 +21,11 @@ export const useSocketCallbacks = (callbackData) => {
   },[callbackData])
 }
 
-export const useSocketFetch = (name, ack) => {
+export const useSocketFetch = (name, ...data) => {
+  const ack = data.pop();
+  
   useEffect(()=>{
-    socket.emit(name, ack)
+    socket.emit(name, ...data, ack)
   },[]);
 }
 
