@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function Game({params}) {
+import useGame from '../hooks/game';
+
+export default function GameMain({params}) {
   const {code} = params;
+  const game = useGame();
   
   return (
     <>
