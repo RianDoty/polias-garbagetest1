@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useContext } from 'react';
+import { useLocation } from 'wouter';
 import useSocket from '../hooks/socket';
 
 
@@ -44,10 +45,24 @@ const NameEntry = ({user}) => {
 //Displays a form for naming and creating a room
 const RoomCreator = () => {
   const [name, setName] = useState('');
+  const [location, setLocation] = useLocation();
+  const socket = useSocket();
+  
+  const onSubmit = (e) => {
+    e.preventDefault();
+    //Tell the server to create a room with the given name
+    socket.emit('create room', name, (code)=>{
+      //After the room is created with a random code, join that room
+      setLocation(`/game/${code}`)
+    })
+  }
   
   return (
     <form>
-      <input type='text'/>
+      <input type='text' className='transparent-input' placeholder='Room Name'
+          value = {name}
+          onChange = {(e)=>setName(e.target.value)}
+        />
       <input type='submit' className='button' value='Create'/>
     </form>
   )
