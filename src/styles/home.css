@@ -77,23 +77,24 @@
   font-size: 17px;
 }
 
-.name-entry-form input[type='submit'] {
+.button {
   background: var(--highlight);
   color: white;
-  border: 3px solid var(--highlight2);
+  border: 2px solid var(--highlight2);
   border-radius: 4px;
   font-weight: bold;
   font-size: 20px;
   padding: 3px 15px; 
-  box-shadow: inset 0px -4px 0 rgb(0 0 0 / 20%);
+  box-shadow: inset 0px -2px rgb(0 0 0 / 10%);
 }
 
-.name-entry-form input[type='submit']:hover {
+.button:hover {
   background: var(--highlight2);
 }
 
-.name-entry-form input[type='submit']:active {
+.button:active {
   background: var(--highlight);
+  box-shadow: inset 0px 2px rgb(0 0 0 / 10%);
 }
 
 .header-profile {
