@@ -78,18 +78,22 @@
 }
 
 .name-entry-form input[type='submit'] {
-  background: green;
+  background: var(--highlight);
   color: white;
-  border: 1px solid darkgreen;
-  border-radius: 2px;
+  border: 3px solid var(--highlight2);
+  border-radius: 4px;
   font-weight: bold;
   font-size: 20px;
   padding: 3px 15px; 
+  box-shadow: inset 0px -4px 0 rgb(0 0 0 / 20%);
 }
 
 .name-entry-form input[type='submit']:hover {
-  background: forestgreen;
-  color: white;
+  background: var(--highlight2);
+}
+
+.name-entry-form input[type='submit']:active {
+  background: var(--highlight);
 }
 
 .header-profile {

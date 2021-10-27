@@ -7,7 +7,7 @@ import UserContext from '../contexts/user';
 
 import '../styles/home.css';
 
-//Components
+//Components//
 const Section = ({children}) => (<div className='dash-section'>{children}</div>)
 const BottomLogo = () => (<h3 className='bottom-logo'>Polias</h3>)
 const Cell = ({children, wClass, header}) => (<div className={`cell ${wClass}`}><div class='dash-box'><CellHeader>{header}</CellHeader>{children}</div></div>)
@@ -41,11 +41,20 @@ const NameEntry = ({user}) => {
   )
 }
 
-//Displays a list of every ongoing server
-const ServerList = () => {}
+//Displays a form for naming and creating a room
+const RoomCreator = () => {
+  const [name, setName] = useState('');
+  
+  return (
+    <form>
+      <input type='text'/>
+      <input type='submit'/>
+    </form>
+  )
+}
 
-//Displays a form for naming and creating a server
-const ServerCreator = () => {}
+//Displays a list of every ongoing room
+const RoomList = () => {}
 
 //Page
 export default function Home() {
@@ -67,7 +76,7 @@ export default function Home() {
           <p>dolor sit amet or whatever</p>
         </Cell>
         <Cell wClass='w-2-5' header='Make a game'>
-          <p>dolor sit amet or whatever</p>
+          <RoomCreator/>
         </Cell>
       </Section>
       <Section><BottomLogo/></Section>
