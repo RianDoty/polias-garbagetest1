@@ -33,7 +33,7 @@ const NameEntry = ({user}) => {
   
   return (
     <form onSubmit={onSubmit} className='name-entry-form'>
-      <input type='text' value={inpVal} onChange={e=>{updateInpVal(e.target.value)}}/>
+      <input type='text' className='transparent-input' value={inpVal} onChange={e=>{updateInpVal(e.target.value)}}/>
       <input type='submit' className='button' value='✓'/>
       <br/>
       {errComponent}
@@ -48,7 +48,7 @@ const RoomCreator = () => {
   return (
     <form>
       <input type='text'/>
-      <input type='submit' className='button'/>
+      <input type='submit' className='button' value='Create'/>
     </form>
   )
 }
