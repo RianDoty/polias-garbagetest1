@@ -29,6 +29,6 @@ export const useSocketFetch = (name, ...data) => {
   },[]);
 }
 
-export const useSocketId = () => 
+export const useSocketId = () => socket.id;
 
 export default useSocket;
