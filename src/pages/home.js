@@ -93,8 +93,7 @@ const RoomCreator = () => {
 const RoomList = () => {
   const [rooms, setRooms] = useVolatileState({});
 
-
-
+  useSocketFetch("get rooms", r => setRooms(r))
   
   const e = Object.entries(rooms).map(([i,r]) => <div key={i}><RoomEntry room={r}/></div>);
 

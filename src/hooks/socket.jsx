@@ -26,5 +26,6 @@ export const useSocketFetch = (name, ...data) => {
   
   useState(()=>{
     socket.emit(name, ...data, ack)
-  },[name, ack]);
+  // eslint-disable-next-line
+  },[]); //eslint is not happy about this, but this is defined as only running once!
 }
