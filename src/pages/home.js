@@ -93,22 +93,21 @@ const RoomCreator = () => {
 const RoomList = () => {
   const [rooms, setRooms] = useVolatileState({});
 
-  useSocketFetch("get rooms", r => {debugger; setRooms(r)});
+  useSocketFetch("get rooms", r => setRooms(r));
 
   
-  const e = Object.entries(rooms).map(([i,r]) => <RoomEntry room={r} keyVal={i}/>);
+  const e = Object.entries(rooms).map(([i,r]) => <div key={i}><RoomEntry room={r}/></div>);
 
   return <div className='dashboard-list'>{e}</div>;
 };
 
-const RoomEntry = ({room, keyVal}) => {
+const RoomEntry = ({room}) => {
   const {code, name, hostName, pCount} = room
   return (
-    <Link href={`game/${code}`} key={keyVal}>
+    <Link href={`game/${code}`}>
       <strong>{name}</strong>
       <div>
-        Hosted by {hostName}
-        <strong>{pCount} players</strong>
+        Hosted by {hostName} <strong>{pCount} players</strong>
       </div>
     </Link>
   );
