@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useContext } from "react";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import { useSocket, useSocketFetch } from "../hooks/socket";
 import useVolatileState from "../hooks/volatile-state";
 
@@ -95,15 +95,23 @@ const RoomList = () => {
 
   useSocketFetch("get rooms", r => setRooms(r));
 
-  const e = rooms.map(() => <RoomEntry />);
+  const e = rooms.map((r) => <RoomEntry room={r}/>);
 
-  return <></>;
+  return <>{e}</>;
 };
 
-const RoomEntry = () => (
-  <>
-  </>
-);
+const RoomEntry = ({room}) => {
+  const {code, name, hostName, pCount} = room
+  return (
+    <Link href={`game/${code}`}>
+      <strong>{name}</strong>
+      <div>
+        Hosted by {hostName}
+        <strong>{pCount} players</strong>
+      </div>
+    </Link>
+  );
+};
 
 //Page
 export default function Home() {
