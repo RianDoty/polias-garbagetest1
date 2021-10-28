@@ -19,12 +19,21 @@ function checkHttps(request, response, next) {
 
 app.all("*", checkHttps);
 
+
+
+/////////////SOCKET.IO///////////////
 io.on('connection', socket => {
   io.emit('socket-connected', socket.id);
   console.log('connection')
 })
 
-io.on('',()=>{});
+io.on('get rooms',(ack)=>{
+  ack({
+    
+  })
+});
+
+//////////////////////////////////////
 
 // Express port-switching logic
 // no touch

@@ -95,7 +95,7 @@ const RoomList = () => {
 
   useSocketFetch("get rooms", r => setRooms(r));
 
-  const e = rooms.map((r) => <RoomEntry room={r}/>);
+  const e = Object.fromEntries(rooms.map((r) => [<RoomEntry room={r}/>]));
 
   return <>{e}</>;
 };
