@@ -24,7 +24,7 @@ io.on('connection', socket => {
   console.log('connection')
 })
 
-io.on('')
+io.on('',()=>{});
 
 // Express port-switching logic
 // no touch
