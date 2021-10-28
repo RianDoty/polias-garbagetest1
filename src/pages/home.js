@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { useLocation } from 'wouter';
-import useSocket from '../hooks/socket';
+import { useSocket, useSocketFetch } from '../hooks/socket';
+import useVolatileState from '../hooks/volatile-state';
 
 
 import UserContext from '../contexts/user';
@@ -69,7 +70,17 @@ const RoomCreator = () => {
 }
 
 //Displays a list of every ongoing room
-const RoomList = () => {}
+const RoomList = () => {
+  const [rooms, setRooms] = useVolatileState([]);
+  
+  useSocketFetch('get rooms', )
+  
+  return (
+    <>
+    
+    </>
+  )
+}
 
 //Page
 export default function Home() {
@@ -88,7 +99,7 @@ export default function Home() {
           <NameEntry user={user}/>
         </Cell>
         <Cell wClass='w-3-5' header='Current Games'>
-          <p>dolor sit amet or whatever</p>
+          <RoomList/>
         </Cell>
         <Cell wClass='w-2-5' header='Make a game'>
           <RoomCreator/>

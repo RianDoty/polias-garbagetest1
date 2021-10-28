@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const useUser = () => {
   const [name, setName] = useState('Unnamed');

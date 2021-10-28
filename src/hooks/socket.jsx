@@ -1,10 +1,10 @@
-import {useState, useEffect, useMemo} from 'react';
+import { useEffect } from 'react';
 import io from 'socket.io-client';
 const socket = io({path: '/api'})
 
 //Connects a list of functions to the socket
 //Functions in {eventName: func} format
-const useSocket = () => socket;
+export const useSocket = () => socket;
 
 export const useSocketCallbacks = (callbackData) => {
   useEffect(()=>{
@@ -26,9 +26,5 @@ export const useSocketFetch = (name, ...data) => {
   
   useEffect(()=>{
     socket.emit(name, ...data, ack)
-  },[]);
+  },[name, data, ack]);
 }
-
-export const useSocketId = () => socket.id;
-
-export default useSocket;
