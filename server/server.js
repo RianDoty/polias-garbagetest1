@@ -6,6 +6,7 @@ const { Server } = require("socket.io");
 const io = new Server(http, {
   path: "/api"
 });
+require('./networking')(io)
 
 // PWAs want HTTPS!
 function checkHttps(request, response, next) {
@@ -18,31 +19,6 @@ function checkHttps(request, response, next) {
 }
 
 app.all("*", checkHttps);
-
-/////////////SOCKET.IO///////////////
-io.on("connection", socket => {
-  io.emit("socket-connected", socket.id);
-  console.log("connection");
-
-  socket.on("get rooms", ack => {
-    console.log("request recieved to ");
-    ack({
-      uljhfvuirfbv: {
-        code: "AAAA",
-        name: "Haha yes",
-        hostName: "Me",
-        pCount: 2,
-        pMax: 10
-      }
-    });
-  });
-  
-  socket.on('create room', (name, ack) => {
-    
-  })
-});
-
-//////////////////////////////////////
 
 // Express port-switching logic
 // no touch
