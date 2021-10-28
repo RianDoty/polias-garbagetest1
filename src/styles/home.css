@@ -3,6 +3,12 @@
   padding: 10px 0;
 }
 
+.dash-section::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
 .dash-section:not(:first-child) {
   border-top: 1px solid var(--highlight);
 }
@@ -17,6 +23,7 @@
 .cell {
   padding: 8px;
   display: inline-block;
+  float: left;
 }
 
 .dash-box {
