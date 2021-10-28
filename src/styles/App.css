@@ -58,3 +58,7 @@ a {
   margin: 1px;
   display: inline-block;
 }
+
+.p-8px {
+  padding: 8px 0;
+}

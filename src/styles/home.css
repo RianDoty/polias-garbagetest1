@@ -113,13 +113,17 @@
 }
 
 /*Server list stuff*/
-.dashboard-list * {
+.dashboard-list a {
   text-align: left;
   display: block;
   overflow: hidden;
   padding: 7px;
 }
 
-.dashboard-list *:hover {
+.dashboard-list a:hover {
   background-color: var(--background);
+}
+
+.muted {
+  color: grey;
 }

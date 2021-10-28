@@ -105,8 +105,8 @@ const RoomEntry = ({room}) => {
   return (
     <Link href='/'>
       <strong>{name}</strong>
-      <div>
-        Hosted by {hostName} <strong>{pCount} players</strong>
+      <div className='muted'>
+        Hosted by {hostName} <span className='p-8px'><strong>{pCount} players</strong></span>
       </div>
     </Link>
   );
