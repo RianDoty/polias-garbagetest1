@@ -36,6 +36,10 @@ io.on("connection", socket => {
       }
     });
   });
+  
+  socket.on('create room', (name, ack) => {
+    
+  })
 });
 
 //////////////////////////////////////
