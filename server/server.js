@@ -29,7 +29,7 @@ io.on('connection', socket => {
 
 io.on('get rooms',(ack)=>{
   ack({
-    
+    'uljhfvuirfbv': {code: 'AAAA', name: 'Haha yes', hostName: 'Me', pCount: 2}
   })
 });
 

@@ -93,6 +93,7 @@ const RoomCreator = () => {
 const RoomList = () => {
   const [rooms, setRooms] = useVolatileState({});
 
+  debugger;
   useSocketFetch("get rooms", r => setRooms(r));
 
   
