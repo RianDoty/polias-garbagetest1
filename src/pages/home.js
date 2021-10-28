@@ -15,7 +15,7 @@ const Section = ({ children }) => (
 const BottomLogo = () => <h3 className="bottom-logo">Polias</h3>;
 const Cell = ({ children, wClass, header }) => (
   <div className={`cell ${wClass}`}>
-    <div class="dash-box">
+    <div className="dash-box">
       <CellHeader>{header}</CellHeader>
       {children}
     </div>
@@ -93,8 +93,7 @@ const RoomCreator = () => {
 const RoomList = () => {
   const [rooms, setRooms] = useVolatileState({});
 
-  debugger;
-  useSocketFetch("get rooms", r => setRooms(r));
+  useSocketFetch("get rooms", r => {debugger; setRooms(r)});
 
   
   const e = Object.values(rooms).map((r) => <RoomEntry room={r}/>);
