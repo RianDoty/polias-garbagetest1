@@ -4,6 +4,12 @@
   display: block;
 }
 
+.dash-section::after {
+  content: '';
+  clear:both;
+  display: block;
+}
+
 .dash-section:not(:first-child) {
   border-top: 1px solid var(--highlight);
 }
