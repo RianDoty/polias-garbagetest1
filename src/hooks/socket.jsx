@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 const socket = io({path: '/api'})
 
@@ -24,7 +24,7 @@ export const useSocketCallbacks = (callbackData) => {
 export const useSocketFetch = (name, ...data) => {
   const ack = data.pop();
   
-  useEffect(()=>{
+  useState(()=>{
     socket.emit(name, ...data, ack)
-  },[name, data, ack]);
+  },[name, ack]);
 }
