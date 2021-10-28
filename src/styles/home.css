@@ -105,3 +105,13 @@
 }
 
 /*Server list stuff*/
+.dashboard-list * {
+  text-align: left;
+  display: block;
+  overflow: hidden;
+  padding: 7px;
+}
+
+.dashboard-list *:hover {
+  background-color: var(--background);
+}

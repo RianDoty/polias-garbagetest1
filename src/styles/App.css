@@ -3,6 +3,12 @@ body {
   color: white;
 }
 
+a {
+  color: inherit;
+  border: none;
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
 }

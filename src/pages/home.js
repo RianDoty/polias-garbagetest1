@@ -96,15 +96,15 @@ const RoomList = () => {
   useSocketFetch("get rooms", r => {debugger; setRooms(r)});
 
   
-  const e = Object.values(rooms).map((r) => <RoomEntry room={r}/>);
+  const e = Object.entries(rooms).map(([i,r]) => <RoomEntry room={r} keyVal={i}/>);
 
-  return <>{e}</>;
+  return <div className='dashboard-list'>{e}</div>;
 };
 
-const RoomEntry = ({room}) => {
+const RoomEntry = ({room, keyVal}) => {
   const {code, name, hostName, pCount} = room
   return (
-    <Link href={`game/${code}`}>
+    <Link href={`game/${code}`} key={keyVal}>
       <strong>{name}</strong>
       <div>
         Hosted by {hostName}
