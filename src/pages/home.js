@@ -104,7 +104,7 @@ const RoomList = () => {
 const RoomEntry = ({room}) => {
   const {code, name, hostName, pCount} = room
   return (
-    <Link href={`game/${code}`}>
+    <Link href='/'>
       <strong>{name}</strong>
       <div>
         Hosted by {hostName} <strong>{pCount} players</strong>
