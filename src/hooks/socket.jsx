@@ -26,5 +26,5 @@ export const useSocketFetch = (name, ...data) => {
   
   useEffect(()=>{
     socket.emit(name, ...data, ack)
-  },[name, data, ack]);
+  },[]);
 }
