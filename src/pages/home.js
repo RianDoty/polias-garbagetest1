@@ -91,11 +91,12 @@ const RoomCreator = () => {
 
 //Displays a list of every ongoing room
 const RoomList = () => {
-  const [rooms, setRooms] = useVolatileState([]);
+  const [rooms, setRooms] = useVolatileState({});
 
   useSocketFetch("get rooms", r => setRooms(r));
 
-  const e = Object.fromEntries(rooms.map((r) => [<RoomEntry room={r}/>]));
+  
+  const e = Object.values(rooms).map((r) => <RoomEntry room={r}/>);
 
   return <>{e}</>;
 };
