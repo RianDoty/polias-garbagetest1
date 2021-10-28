@@ -101,12 +101,12 @@ const RoomList = () => {
 };
 
 const RoomEntry = ({room}) => {
-  const {code, name, hostName, pCount} = room
+  const {code, name, hostName, pCount, pMax} = room
   return (
     <Link href='/'>
       <strong>{name}</strong>
       <div className='muted'>
-        Hosted by {hostName} <span className='p-8px'><strong>{pCount} players</strong></span>
+        Hosted by {hostName} <span className='p-4px'><strong>{pCount}<span className='f-80'> OF </span>{pMax}</strong></span>
       </div>
     </Link>
   );
@@ -130,9 +130,11 @@ export default function Home() {
       </Section>
       <h2>Get Started</h2>
       <Section>
-        <Cell wClass="w-1-2" header="Enter your Name">
+        <Cell wClass="w-1-2 center-float" header="Enter your Name">
           <NameEntry user={user} />
         </Cell>
+      </Section>
+      <Section>
         <Cell wClass="w-3-5" header="Current Games">
           <RoomList />
         </Cell>

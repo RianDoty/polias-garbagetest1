@@ -31,7 +31,8 @@ io.on("connection", socket => {
         code: "AAAA",
         name: "Haha yes",
         hostName: "Me",
-        pCount: 2
+        pCount: 2,
+        pMax: 10
       }
     });
   });

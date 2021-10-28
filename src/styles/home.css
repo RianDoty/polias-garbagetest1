@@ -127,3 +127,11 @@
 .muted {
   color: grey;
 }
+
+.f-80 {
+  font-size: .8em;
+}
+
+.center-float {
+  float: none;
+}
