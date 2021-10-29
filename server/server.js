@@ -6,8 +6,10 @@ const { Server } = require("socket.io");
 const io = new Server(http, {
   path: "/api"
 });
+require('./networking')(io) //Set up networking for the game
 
 // PWAs want HTTPS!
+// Swap over non-https connections to https
 function checkHttps(request, response, next) {
   // Check the protocol — if http, redirect to https.
   if (request.get("X-Forwarded-Proto").indexOf("https") != -1) {
@@ -18,6 +20,8 @@ function checkHttps(request, response, next) {
 }
 
 app.all("*", checkHttps);
+
+
 
 // Express port-switching logic
 // no touch
