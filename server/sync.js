@@ -4,13 +4,19 @@ class SyncHost {
     this.keyword = keyword;
     this._data = startingData;
     
-    this.handler = {
-      
-    }
+    this.initProxy()
   }
   
   initProxy() {
-    this.data = new Proxy(this._data, )
+    this.handler = {
+      set: (obj, prop, value) => {
+        const lastValue = obj[prop];
+        
+        
+      }
+    }
+    
+    this.data = new Proxy(this._data, this.handler);
   }
   
   create(prop, value) {
