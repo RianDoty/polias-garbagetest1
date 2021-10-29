@@ -3,17 +3,32 @@ class SyncHost {
     this.io = io;
     this.keyword = keyword;
     this._data = startingData;
+    
+    this.handler = {
+      
+    }
   }
   
   initProxy() {
     this.data = new Proxy(this._data, )
   }
   
-  update(data) {
+  create(prop, value) {
     const { io, keyword } = this;
-    this.data = data;
     
-    io.to(keyword).emit(`update ${keyword}`, data);
+    io.to(keyword).emit(`create ${keyword}`, prop, value)
+  }
+  
+  update(prop, value) {
+    const { io, keyword } = this;
+    
+    io.to(keyword).emit(`update ${keyword}`, prop, value);
+  }
+  
+  delete(prop, value) {
+    const { io, keyword } = this;
+    
+    io.to(keyword).emit(`delete ${keyword}`, prop, value);
   }
   
   subscribe(socket) {
