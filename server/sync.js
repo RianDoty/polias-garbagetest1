@@ -2,7 +2,11 @@ class SyncHost {
   constructor(io, keyword, startingData = {}) {
     this.io = io;
     this.keyword = keyword;
-    this.data = startingData;
+    this._data = startingData;
+  }
+  
+  initProxy() {
+    this.data = new Proxy(this._data, )
   }
   
   update(data) {
