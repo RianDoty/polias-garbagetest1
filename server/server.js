@@ -6,7 +6,6 @@ const { Server } = require("socket.io");
 const io = new Server(http, {
   path: "/api"
 });
-require('./networking')(io)
 
 // PWAs want HTTPS!
 function checkHttps(request, response, next) {
