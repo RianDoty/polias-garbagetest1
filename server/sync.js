@@ -58,3 +58,5 @@ class SyncHost {
     socket.leave(keyword);
   }
 }
+
+module.exports = SyncHost
