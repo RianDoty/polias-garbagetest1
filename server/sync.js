@@ -13,7 +13,14 @@ class SyncHost {
         const lastValue = obj[prop];
         
         if (value === lastValue) return;
-        this.update(prop, value)
+        
+        if (value === null && lastValue !== null) {
+          this.delete(prop, value)
+        } else if (lastValue === null && value !== null) {
+          this.create(prop, value)
+        } else if (lastValue !== value) {
+          this.update(prop, value)
+        }
         
         obj[prop] = value;
         return true
