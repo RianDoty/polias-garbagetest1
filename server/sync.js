@@ -6,8 +6,13 @@ class SyncHost {
   }
   
   update(data) {
+    const { io, keyword } = this;
     this.data = data;
     
-    this.io.emit(`update ${this.keyword}`, data);
+    io.to(keyword).emit(`update ${keyword}`, data);
+  }
+  
+  subscribe(socket) {
+    
   }
 }
