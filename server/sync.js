@@ -13,6 +13,12 @@ class SyncHost {
   }
   
   subscribe(socket) {
-    
+    const { keyword } = this;
+    socket.join(keyword);
+  }
+  
+  unsubscribe(socket) {
+    const { keyword } = this;
+    socket.leave(keyword);
   }
 }
