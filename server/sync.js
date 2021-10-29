@@ -12,7 +12,11 @@ class SyncHost {
       set: (obj, prop, value) => {
         const lastValue = obj[prop];
         
+        if (value === lastValue) return;
+        this.update(prop, value)
         
+        obj[prop] = value;
+        return true
       }
     }
     
