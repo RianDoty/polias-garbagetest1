@@ -1,5 +1,5 @@
-import SyncHost from './sync';
+const SyncHost = require('./sync')
 
-export function main(io) {
+module.exports = (io)=>{
   const roomList = new SyncHost();
 }

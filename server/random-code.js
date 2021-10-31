@@ -1,7 +1,7 @@
-const usedLetters = {};
+const usedCodes = {};
 
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-export function randomCode(length = 4) {
+function randomCode(length = 4) {
   const data = '';
   
   for (let i=0; i<length; i++) {
@@ -11,6 +11,13 @@ export function randomCode(length = 4) {
   }
   
   //Register a code as used
+  usedCodes[data] = true;
   
   return data
 }
+
+function unregisterCode(code='') {
+  delete usedCodes[code];
+}
+
+module.exports = {randomCode, unregisterCode}
