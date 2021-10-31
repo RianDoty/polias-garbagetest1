@@ -1,3 +1,5 @@
+const usedLetters = {};
+
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 module.exports = function randomCode(length = 4) {
   const data = '';
@@ -7,6 +9,8 @@ module.exports = function randomCode(length = 4) {
     
     data += letters[randomIndex];
   }
+  
+  //Register a code as used
   
   return data
 }
