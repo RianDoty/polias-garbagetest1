@@ -17,6 +17,7 @@ function randomCode(length = 4) {
 }
 
 function unregisterCode(code='') {
+  //Make a code usable now that it doesn't have a purpose anymore
   delete usedCodes[code];
 }
 

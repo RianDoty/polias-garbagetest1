@@ -10,11 +10,21 @@ class SyncHost {
   }
   
   create(key, value) {
+    const { data, io, keyword } = this;
     
+    if (typeof value !== 'object') return; //Data in a sync host is ONLY going to be objects
+    
+    data[key] = value;
+    
+    io.to(keyword).emit(`sync create ${keyword}`, key, value)
   }
   
   update(key, prop, value) {
+    const { data, io, keyword } = this;
     
+    data[key][prop] = value;
+    
+    io.to(keyword).emit(`sync update ${keyword}`, )
   }
   
   delete(key) {
