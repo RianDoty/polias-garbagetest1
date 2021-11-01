@@ -1,11 +1,17 @@
 const usedCodes = {};
 
-const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 function randomCode(length = 4) {
   const data = '';
   
   for (let i=0; i<length; i++) {
-    const randomIndex = Math.floor(Math.random()*letters.length);
+    const maxAttempts = 100;
+    let randomIndex;
+    let attempts = 0;
+    do {
+      randomIndex = Math.floor(Math.random()*letters.length); //Pick a random letter from the set
+      attempts ++;
+    } while (usedCodes[randomIndex] && attempts < maxAttempts) //
     
     data += letters[randomIndex];
   }
