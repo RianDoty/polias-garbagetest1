@@ -6,13 +6,18 @@ const rooms = {};
 
 module.exports = io => {
   const roomListSync = new SyncHost(io, "rooms");
+  
   io.on("connection", socket => {
     socket.on("create-room", ack => {
       const code = randomCode();
       
-      const newRoom = new Room(code);
+      const newRoom = new Room(code, socket);
       rooms[code] = newRoom;
       roomListSync.create(code, newRoom);
+      
+      ack(code);
     });
   });
+  
+  io.on
 };
