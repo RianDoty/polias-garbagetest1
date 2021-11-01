@@ -6,6 +6,7 @@ class SyncHost {
     
     this.io.on('connection', s=>{
       s.on(`sync subscribe ${keyword}`, ack=>this.subscribe(s,ack))
+      s.on(`sync unsubscribe ${keyword}`, ()=>this.subscribe(s))
     })
   }
   
@@ -24,11 +25,15 @@ class SyncHost {
     
     data[key][prop] = value;
     
-    io.to(keyword).emit(`sync update ${keyword}`, )
+    io.to(keyword).emit(`sync update ${keyword}`, key, prop, value);
   }
   
   delete(key) {
+    const { data, io, keyword } = this;
     
+    delete data[key]
+    
+    io.to(keyword).emit(`sync delete ${keyword}`, key);
   }
   
   subscribe(socket, ack) {
