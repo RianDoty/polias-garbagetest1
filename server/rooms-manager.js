@@ -11,7 +11,7 @@ module.exports = io => {
     socket.on("create-room", ack => {
       const code = randomCode();
       
-      const newRoom = new Room(code, socket);
+      const newRoom = new Room(code, socket, roomListSync);
       rooms[code] = newRoom;
       roomListSync.create(code, newRoom);
       
