@@ -5,7 +5,7 @@ class SyncHost {
     this.data = startingData
     
     this.io.on('connection', s=>{
-      s.on(`subscribe ${keyword}`, ack=>this.subscribe(s,ack))
+      s.on(`sync subscribe ${keyword}`, ack=>this.subscribe(s,ack))
     })
   }
   
