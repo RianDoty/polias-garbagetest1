@@ -18,6 +18,4 @@ module.exports = io => {
       ack(code);
     });
   });
-  
-  io.on
 };
