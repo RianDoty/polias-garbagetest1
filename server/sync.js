@@ -24,11 +24,11 @@ class SyncHost {
     const { data, io, keyword } = this;
     
     const value = keys.pop();
-    let current = data
-    keys.forEach(k =>{current = current[k]});
+    const prop = keys.pop();
+    keys.reduce((t,k)=>t[k],data)[prop] = value;
     
     
-    io.to(keyword).emit(`sync update ${keyword}`, keys, value);
+    io.to(keyword).emit(`sync update ${keyword}`, keys, prop, value);
   }
   
   delete(key) {
