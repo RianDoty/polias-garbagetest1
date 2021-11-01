@@ -1,7 +1,8 @@
 const SyncHost = require("./sync");
+const Room = require('./room')
 const randomCode = require("./random-code");
 
-const rooms
+const rooms = {};
 
 module.exports = io => {
   const roomListSync = new SyncHost(io, "rooms");
@@ -9,7 +10,9 @@ module.exports = io => {
     socket.on("create-room", ack => {
       const code = randomCode();
       
-      
+      const newRoom = new Room(code);
+      rooms[code] = newRoom;
+      roomListSync.create(code, newRoom);
     });
   });
 };
