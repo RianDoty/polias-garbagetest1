@@ -8,7 +8,7 @@ export default function useGame(code) {
   const [players, setPlayers] = useVolatileState({});
   
   //Fetch data
-  useSocketFetch('get-game', code, (gData)=>{
+  useSocketFetch(``, (gData)=>{
     const {state, players} = gData;
     
     setState(state);
