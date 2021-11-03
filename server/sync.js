@@ -1,4 +1,4 @@
-class SyncHost {
+ class SyncHost {
   constructor(io, keyword, startingData = {}) {
     this.io = io;
     this.keyword = keyword;
