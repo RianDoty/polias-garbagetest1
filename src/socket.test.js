@@ -34,7 +34,5 @@ describe("Polias", () => {
     serverSocket.emit('hello', 'world')
   })
   
-  test('requires outside modules', ()=>{
-    expect(require('../server/test-module')).toBe('foo')
-  })
+  test()
 });
