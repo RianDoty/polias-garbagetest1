@@ -5,6 +5,7 @@ const useSync = (keyword) => {
   const socket = useSocket();
   
   useEffect(()=>{
-    socket.emit(`sync subscribe ${keyword}`)
+    socket.emit(`sync subscribe ${keyword}`);
+    return () => socket.emit(`sync unsubscribe ${keyword}`);
   },[keyword])
 }
