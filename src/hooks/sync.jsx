@@ -1,3 +1,3 @@
 import { useState, useEffect } from 'react';
 
-const useSync = () => {}
+const useSync = (keyword) => {}
