@@ -20,15 +20,12 @@
     io.to(keyword).emit(`sync create ${keyword}`, key, value)
   }
   
-  update(...keys) {
+  update(key, prop, value) {
     const { data, io, keyword } = this;
     
-    const value = keys.pop();
-    const prop = keys.pop();
-    keys.reduce((t,k)=>t[k],data)[prop] = value;
+    data[key][prop] = value;
     
-    
-    io.to(keyword).emit(`sync update ${keyword}`, keys, prop, value);
+    io.to(keyword).emit(`sync update ${keyword}`, key, prop, value);
   }
   
   delete(key) {
