@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { useLocation, Link } from "wouter";
-import { useSocket, useSocketFetch } from "../hooks/socket";
-import useVolatileState from "../hooks/volatile-state";
+import { useSocket } from "../hooks/socket";
 import useSync from '../hooks/sync';
 
 import UserContext from "../contexts/user";
@@ -69,6 +68,7 @@ const RoomCreator = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    console.log('submitted')
     //Tell the server to create a room with the given name
     socket.emit("create-room", name, code => {
       //After the room is created with a random code, join that room
@@ -77,7 +77,7 @@ const RoomCreator = () => {
   };
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input
         type="text"
         className="transparent-input"

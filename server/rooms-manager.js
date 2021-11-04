@@ -1,6 +1,6 @@
 const SyncHost = require("./sync");
 const Room = require('./room')
-const randomCode = require("./random-code");
+const { randomCode, unregisterCode } = require("./random-code");
 
 const rooms = {};
 
