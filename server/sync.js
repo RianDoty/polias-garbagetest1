@@ -18,7 +18,10 @@
     
     data[key] = value;
     
+    console.log('sync create')
+    
     io.to(keyword).emit(`sync create ${keyword}`, key, value)
+    console.log('emit completed')
   }
   
   update(key, prop, value) {

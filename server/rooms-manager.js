@@ -14,7 +14,7 @@ module.exports = io => {
       console.log('creating room')
       const newRoom = new Room(io, code, socket, roomListSync);
       rooms[code] = newRoom;
-      roomListSync.create(code, newRoom);
+      roomListSync.create(code, newRoom.template());
       
       ack(code);
     });

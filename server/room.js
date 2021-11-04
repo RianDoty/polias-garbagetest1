@@ -2,6 +2,7 @@ const SyncHost = require('./sync')
 
 class Room {
   constructor(io, code, host, roomListHost) {
+    console.log('room created')
     this.io = io;
     this.code = code;
     this.playersSync = new SyncHost(io);
