@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { useLocation, Link } from "wouter";
 import { useSocket, useSocketFetch } from "../hooks/socket";
 import useVolatileState from "../hooks/volatile-state";
+import useSync from '../hooks/sync';
 
 import UserContext from "../contexts/user";
 
