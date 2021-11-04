@@ -65,12 +65,13 @@ const RoomCreator = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useLocation();
   const socket = useSocket();
+  const user = useContext(UserContext)
 
   const onSubmit = e => {
     e.preventDefault();
     console.log('submitted')
     //Tell the server to create a room with the given name
-    socket.emit("create-room", name, code => {
+    socket.emit("create-room", {name: user.name}, name, code => {
       //After the room is created with a random code, join that room
       setLocation(`/game/${code}`);
     });

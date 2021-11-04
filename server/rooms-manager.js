@@ -7,13 +7,13 @@ const rooms = {};
 module.exports = io => {
   const roomListSync = new SyncHost(io, "rooms");
   io.on("connection", socket => {
-    socket.on("create-room", ({name: username}, name, ack) => {
+    socket.on("create-room", ({name: hostName}, name, ack) => {
       const code = randomCode();
       
       console.log('creating room')
       const newRoom = new Room(io, code, socket, roomListSync, {
-        name
-        
+        name,
+        hostName
       });
       rooms[code] = newRoom;
       roomListSync.create(code, newRoom.template());
