@@ -7,7 +7,7 @@
     
     io.on('connection', s=>{
       s.on(`sync subscribe ${keyword}`, ack=>this.subscribe(s,ack))
-      s.on(`sync unsubscribe ${keyword}`, ()=>this.subscribe(s))
+      s.on(`sync unsubscribe ${keyword}`, ()=>this.unsubscribe(s))
     })
   }
   
