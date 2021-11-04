@@ -70,7 +70,7 @@ const RoomCreator = () => {
   const onSubmit = e => {
     e.preventDefault();
     //Tell the server to create a room with the given name
-    socket.emit("create room", name, code => {
+    socket.emit("create-room", name, code => {
       //After the room is created with a random code, join that room
       setLocation(`/game/${code}`);
     });
@@ -92,9 +92,7 @@ const RoomCreator = () => {
 
 //Displays a list of every ongoing room
 const RoomList = () => {
-  const [rooms, setRooms] = useVolatileState({});
-
-  useSocketFetch("get rooms", r => setRooms(r))
+  const rooms = useSync('rooms');
   
   const e = Object.entries(rooms).map(([i,r]) => <div key={i}><RoomEntry room={r}/></div>);
 

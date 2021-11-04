@@ -8,9 +8,10 @@ module.exports = io => {
   const roomListSync = new SyncHost(io, "rooms");
   
   io.on("connection", socket => {
-    socket.on("create-room", ack => {
+    socket.on("create-room", (name, ack) => {
       const code = randomCode();
       
+      console.log('creating room')
       const newRoom = new Room(code, socket, roomListSync);
       rooms[code] = newRoom;
       roomListSync.create(code, newRoom);

@@ -6,10 +6,12 @@ const useForceUpdate = () => {
   return () => updateIndex(i=>{console.log(i); return i+1;});
 }
 
-export default function useVolatileState(def) {
+function useVolatileState(def) {
   //A state that refreshes EVERY time a change is made.
   const [state, setState] = useState(def);
   const forceUpdate = useForceUpdate()
   
   return [state, (v) => {setState(v); forceUpdate()}];
 }
+
+export default useVolatileState;
