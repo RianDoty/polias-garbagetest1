@@ -1,4 +1,5 @@
 import React from 'react';
+import SyncProvider from '../components/sync-provider';
 
 //Game-related stuff
 import useGame from '../hooks/game';
