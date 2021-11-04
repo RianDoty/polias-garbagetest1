@@ -4,8 +4,8 @@ class Room {
   constructor(io, code, host, roomListHost) {
     this.io = io;
     this.code = code;
-    this.playersSync = new SyncHost();
-    this.stateSync = new SyncHost({
+    this.playersSync = new SyncHost(io);
+    this.stateSync = new SyncHost(io, {
       gameState: 'lobby',
       day: 0,
       winner: null

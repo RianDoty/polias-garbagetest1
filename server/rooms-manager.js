@@ -12,7 +12,7 @@ module.exports = io => {
       const code = randomCode();
       
       console.log('creating room')
-      const newRoom = new Room(code, socket, roomListSync);
+      const newRoom = new Room(io, code, socket, roomListSync);
       rooms[code] = newRoom;
       roomListSync.create(code, newRoom);
       

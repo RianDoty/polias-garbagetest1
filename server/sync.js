@@ -1,10 +1,11 @@
  class SyncHost {
   constructor(io, keyword, startingData = {}) {
+    console.log(!!io)
     this.io = io;
     this.keyword = keyword;
     this.data = startingData
     
-    this.io.on('connection', s=>{
+    io.on('connection', s=>{
       s.on(`sync subscribe ${keyword}`, ack=>this.subscribe(s,ack))
       s.on(`sync unsubscribe ${keyword}`, ()=>this.subscribe(s))
     })
