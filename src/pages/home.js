@@ -102,7 +102,7 @@ const RoomList = () => {
 const RoomEntry = ({room}) => {
   const {code, name, hostName, pCount, pMax} = room
   return (
-    <Link href='/'>
+    <Link href={`/${code}`}>
       <strong>{name}</strong>
       <div className='muted'>
         Hosted by {hostName} <span className='p-4px'><strong>{pCount}<span className='f-80'> OF </span>{pMax}</strong></span>
