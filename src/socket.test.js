@@ -17,7 +17,6 @@ describe("Polias", () => {
       });
       clientSocket.on("connect", done);
     });
-    networking(io);
   });
 
   afterAll(() => {
@@ -36,7 +35,7 @@ describe("Polias", () => {
     serverSocket.emit('hello', 'world')
   })
   
-  test('creates rooms' done => {
-       
-       }) 
+  test('creates rooms', done => {
+    
+  }) 
 });
