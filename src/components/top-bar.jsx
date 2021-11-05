@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import UserContext from '../contexts/user';
 
@@ -43,10 +43,10 @@ const Profile = () => {
 }
 
 export default function TopBar({narrowOff}) {
-  const narrow = narrowOff ? '' : ' narrow'
+  const state = useState()
   return (
     <header className='common-header-container'>
-      <div className={`common-header${narrow}`}>
+      <div className='common-header narrow' narrowOff={+narrowOff}>
         <Logo/>
         <Content/>
         <Profile/>
