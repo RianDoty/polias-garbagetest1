@@ -13,6 +13,7 @@ import UserContext from "./contexts/user";
 
 function App() {
   const user = useUser()
+  const refreshFood = useRoute();
   const route = window.location.pathname
   
   const isInGame = route.indexOf('game') != -1;
