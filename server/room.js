@@ -22,7 +22,7 @@ class Room {
       name: this.name,
       code: this.code,
       hostName: this.hostName,
-      pCount: this.players.length,
+      pCount: this.players.size,
       pMax: '∞'
     }
   }
