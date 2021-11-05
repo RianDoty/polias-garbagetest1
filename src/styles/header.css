@@ -18,12 +18,6 @@
   align-items: center;
   height: 100%;
   padding: 0 10px;
-  
-  transition: width 0.5s;
-}
-
-.common-header[narrowOff='1'] {
-  max-width: none;
 }
 
 .header-logo * {

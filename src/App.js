@@ -13,17 +13,12 @@ import UserContext from "./contexts/user";
 
 function App() {
   const user = useUser()
-  const refreshFood = useRoute();
-  const route = window.location.pathname
-  
-  const isInGame = route.indexOf('game') != -1;
-  
   
   return (
     <div className="App">
       <UserContext.Provider value={user}>
         <Router>
-          <TopBar narrowOff={isInGame}/>
+          <TopBar/>
           <main className="app-main">
             <PageRouter />
           </main>

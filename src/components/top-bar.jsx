@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext, useState } from 'react';
+import { useRoute } from 'wouter';
 
 import UserContext from '../contexts/user';
 
@@ -42,11 +43,11 @@ const Profile = () => {
   )
 }
 
-export default function TopBar({narrowOff}) {
-  const state = useState()
+export default function TopBar() {
+  
   return (
     <header className='common-header-container'>
-      <div className='common-header narrow' narrowOff={+narrowOff}>
+      <div className='common-header narrow'>
         <Logo/>
         <Content/>
         <Profile/>
