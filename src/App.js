@@ -17,8 +17,8 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={user}>
+        <TopBar/>
         <Router>
-          <TopBar/>
           <main className="app-main">
             <PageRouter />
           </main>

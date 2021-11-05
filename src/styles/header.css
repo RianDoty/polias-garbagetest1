@@ -11,11 +11,12 @@
   box-shadow: 0px 2px 4px 2px var(--shadow);
   
   z-index: 999;
-  transition: max-width 0.5s;
+  transition: max-width 0.5s, background-color 0.5s;
 }
 
 .narrow-override {
   max-width: 100%;
+  background-color: pink;
 }
 
 .common-header {
