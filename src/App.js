@@ -13,8 +13,10 @@ import UserContext from "./contexts/user";
 
 function App() {
   const user = useUser()
+  const route = window.location.pathname
   
-  const isInGame = useRoute().indexOf('game') != -1;
+  const isInGame = route.indexOf('game') != -1;
+  
   
   return (
     <div className="App">
