@@ -17,9 +17,9 @@ export default function GameMain({params}) {
   
   return (
     <>
-      <GameContext.Provider value={game}>
-        <SideBar/>
-      </GameContext.Provider>
+      <SyncProvider keyword={''}>
+      
+      </SyncProvider>
     </>
   )
 }
