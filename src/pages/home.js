@@ -71,12 +71,13 @@ const RoomCreator = () => {
   const user = useContext(UserContext)
 
   const onSubmit = e => {
-    if (!user.name) {
+    e.preventDefault();
+    
+    if (!user.name || user.name === 'Unnamed') {
       setErr('Set your name!')
       return false;
     }
     
-    e.preventDefault();
     console.log('submitted')
     //Tell the server to create a room with the given name
     socket.emit("create-room", {name: user.name}, name, code => {
@@ -84,6 +85,11 @@ const RoomCreator = () => {
       setLocation(`/game/${code}`);
     });
   };
+  
+  let errComponent;
+  if (err) {
+    errComponent = <Error>{err}</Error>;
+  }
 
   return (
     <form onSubmit={onSubmit}>
@@ -95,6 +101,7 @@ const RoomCreator = () => {
         onChange={e => setName(e.target.value)}
       />
       <input type="submit" className="button" value="Create" />
+      {errComponent}
     </form>
   );
 };

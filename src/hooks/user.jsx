@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const useUser = () => {
-  const [name, setName] = useState('Unnamed');
+  const [name, setName] = useState();
   
   return {name, setName}
 }

@@ -21,8 +21,10 @@ export const useSocketCallbacks = (callbackData) => {
   },[callbackData])
 }
 
-export const useSocketFetch = (name, ...data) => {
+export const useSocketFetch = (name, ...data) => { //...data, ack, cleanup
+  const cleanup = data.pop();
   const ack = data.pop();
+  if (!ack) ack = cleanup;
   
   useState(()=>{
     socket.emit(name, ...data, ack)

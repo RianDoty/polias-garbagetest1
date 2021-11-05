@@ -33,9 +33,11 @@ const Content = () => {
 
 const Profile = () => {
   const user = useContext(UserContext);
+  
+  const {name = 'Unnamed'} = user;
   return (
     <div className='header-profile'>
-      <span>{user.name}</span>
+      <span>{name}</span>
     </div>
   )
 }
