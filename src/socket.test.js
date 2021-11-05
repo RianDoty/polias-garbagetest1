@@ -1,6 +1,7 @@
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const Client = require("socket.io-client");
+const networking = require('../server/networking');
 
 describe("Polias", () => {
   let io, serverSocket, clientSocket;
@@ -16,6 +17,7 @@ describe("Polias", () => {
       });
       clientSocket.on("connect", done);
     });
+    networking(io);
   });
 
   afterAll(() => {
@@ -34,5 +36,7 @@ describe("Polias", () => {
     serverSocket.emit('hello', 'world')
   })
   
-  test()
+  test('creates rooms' done => {
+       
+       }) 
 });

@@ -25,6 +25,8 @@ const CellHeader = ({ children }) => (
   <div className="cell-header">{children}</div>
 );
 
+const Error = ({ children }) => <span className='error'>{children}</span>
+
 //Displays a form for the user to enter their name
 const NameEntry = ({ user }) => {
   const [inpVal, updateInpVal] = useState("");
@@ -40,7 +42,7 @@ const NameEntry = ({ user }) => {
 
   let errComponent;
   if (err) {
-    errComponent = <span className="error">{err}</span>;
+    errComponent = <Error>{err}</Error>;
   }
 
   return (
@@ -62,12 +64,18 @@ const NameEntry = ({ user }) => {
 
 //Displays a form for naming and creating a room
 const RoomCreator = () => {
+  const [err, setErr] = useState();
   const [name, setName] = useState("");
   const [location, setLocation] = useLocation();
   const socket = useSocket();
   const user = useContext(UserContext)
 
   const onSubmit = e => {
+    if (!user.name) {
+      setErr('Set your name!')
+      return false;
+    }
+    
     e.preventDefault();
     console.log('submitted')
     //Tell the server to create a room with the given name

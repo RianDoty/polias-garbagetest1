@@ -18,6 +18,7 @@ module.exports = io => {
       rooms[code] = newRoom;
       roomListSync.create(code, newRoom.template());
       
+      //Send the host to the room
       ack(code);
     });
   });
