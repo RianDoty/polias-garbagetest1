@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext, useState } from 'react';
-import { useRoute } from 'wouter';
+import { useLocation } from 'wouter';
 
 import UserContext from '../contexts/user';
 
@@ -44,11 +44,13 @@ const Profile = () => {
 }
 
 export default function TopBar() {
-  const [route, setRoute] = useRoute();
+  const [location] = useLocation();
+  
+  const isInGame = location.indexOf('game') != -1;
   
   return (
     <header className='common-header-container'>
-      <div className='common-header narrow'>
+      <div className={`common-header narrow ${isInGame ? 'narrow-override' : ''}`}>
         <Logo/>
         <Content/>
         <Profile/>
