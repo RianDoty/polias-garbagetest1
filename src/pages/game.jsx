@@ -6,7 +6,7 @@ import useGame from '../hooks/game';
 import GameContext from '../contexts/game';
 
 //Game components
-import Side
+import SideBar from '../components/game/side-bar'
 
 //Style
 import '../styles/game.css'
@@ -18,7 +18,7 @@ export default function GameMain({params}) {
   return (
     <>
       <GameContext.Provider value={game}>
-      
+        <SideBar/>
       </GameContext.Provider>
     </>
   )
