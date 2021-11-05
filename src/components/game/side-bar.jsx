@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const SideBar = () => {
+const SideBar = ({players}) => {
   return null;
 }
 

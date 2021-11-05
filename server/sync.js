@@ -1,4 +1,6 @@
- class SyncHost {
+const noop = ()=>{} 
+
+class SyncHost {
   constructor(io, keyword, startingData = {}) {
     console.log(!!io)
     this.io = io;
@@ -41,11 +43,14 @@
   }
   
   subscribe(socket, ack) {
-    ack(this.data);
+    //Return the current value to the client as the initial value
+    if (ack) ack(this.data);
+    //The client is sent further changes
     socket.join(this.keyword)
   }
   
   unsubscribe(socket) {
+    //Stop sending the client changes
     socket.leave(this.keyword);
   }
 }
