@@ -44,12 +44,15 @@ const Profile = () => {
 }
 
 export default function TopBar() {
+  const route = useRoute();
+  
   
   return (
     <header className='common-header-container'>
       <div className='common-header narrow'>
         <Logo/>
         <Content/>
+        {Object.keys(Object.values(route)[1]).toString()}
         <Profile/>
       </div>
     </header>
