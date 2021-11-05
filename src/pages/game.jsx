@@ -5,6 +5,12 @@ import SyncProvider from '../components/sync-provider';
 import useGame from '../hooks/game';
 import GameContext from '../contexts/game';
 
+//Game components
+import Side
+
+//Style
+import '../styles/game.css'
+
 export default function GameMain({params}) {
   const {code} = params;
   const game = useGame(code);
