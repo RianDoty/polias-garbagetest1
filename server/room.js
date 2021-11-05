@@ -8,13 +8,11 @@ class Room {
     this.name = name;
     this.hostName = hostName;
     
-    this.players = []
+    this.players = {}
     
-    this.playersSync = new SyncHost(io, {});
-    this.stateSync = new SyncHost(io, {
-      gameState: 'lobby',
-      day: 0,
-      winner: null
+    this.usersSync = new SyncHost(io, `room users ${code}`, {});
+    this.stateSync = new SyncHost(io, `room state ${code}`, {
+      state: 'lobby'
     });
     this.roomListSync = roomListHost
   }
