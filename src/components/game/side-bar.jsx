@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const SideBar = () => {
-  
+  return null;
 }
 
 export default SideBar;
