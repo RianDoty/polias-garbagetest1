@@ -18,7 +18,7 @@ export default function GameMain({params}) {
   return (
     <>
       <SyncProvider keyword={''}>
-      
+        <SideBar/>
       </SyncProvider>
     </>
   )

@@ -42,10 +42,11 @@ const Profile = () => {
   )
 }
 
-export default function TopBar() {
+export default function TopBar({narrowOff}) {
+  const narrow = narrowOff ? '' : ' narrow'
   return (
     <header className='common-header-container'>
-      <div className='common-header narrow'>
+      <div className={`common-header${narrow}`}>
         <Logo/>
         <Content/>
         <Profile/>
