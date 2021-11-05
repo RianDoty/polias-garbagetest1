@@ -5,6 +5,7 @@ class Room {
     this.io = io;
     this.code = code;
     this.host = host;
+    this.name = name;
     this.hostName = hostName;
     
     this.players = []
@@ -20,7 +21,7 @@ class Room {
   
   template() {
     return {
-      name: this.name || 'Unnamed',
+      name: this.name,
       code: this.code,
       hostName: this.hostName,
       pCount: this.players.length,
@@ -28,8 +29,8 @@ class Room {
     }
   }
   
-  updateList() {
-    
+  updateList(prop, value) {
+    this.roomListSync.update(this.code, prop, value);
   }
 }
 
