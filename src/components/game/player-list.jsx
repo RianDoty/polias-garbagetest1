@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react';
 
 const PlayerList = () => {
   
-  return null
+  return (
+  <div className='player-list'>
+    
+  </div>
+  )
 }
 
 export default PlayerList
