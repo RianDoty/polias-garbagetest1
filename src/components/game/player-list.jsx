@@ -9,4 +9,12 @@ const PlayerList = () => {
   )
 }
 
+const PlayerEntry = ({player: {name}}) => {
+  return (
+    <div className='player-entry'>
+      {name}
+    </div>
+  )
+}
+
 export default PlayerList
