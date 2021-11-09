@@ -6,4 +6,7 @@
   width: 225px;
   background-color: var(--shade2);
   outline: auto;
+  
+  display: flex;
+  padding: 5px;
 }
