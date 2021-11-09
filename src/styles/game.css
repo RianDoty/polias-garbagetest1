@@ -35,6 +35,6 @@
 .avatar {
   height: 40px;
   width: 40px;
-  border-width: 3px;
+  border-radius: 3px;
   overflow: hidden;
 }
