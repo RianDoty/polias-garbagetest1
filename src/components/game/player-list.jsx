@@ -43,9 +43,10 @@ const PlayerList = () => {
   )
 }
 
-const PlayerEntry = ({player: {name}}) => {
+const PlayerEntry = ({player: {name, cardID}}) => {
   return (
     <div className='player-entry'>
+      <Avatar cardID={cardID}/>
       {name}
     </div>
   )
@@ -55,11 +56,10 @@ const avatars = [
   'https://cdn.glitch.me/35125d36-1414-4625-886d-50b6771f7d06%2Fbaseavatar.png?v=1636495856765',
   
 ]
-const clamp = (num, min, max) => Math.max(Math.min(num, max), min)
 const Avatar = ({cardID = 0}) => {
-  cardID = clamp(cardID, 0, avatars.length);
+  const image = avatars[cardID] || avatars[0];
   
-  
+  return <img src={image} className='avatar'/>;
 }
 
 export default PlayerList

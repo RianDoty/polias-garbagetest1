@@ -24,9 +24,17 @@
 }
 
 .player-entry {
+  text-align: left;
   padding: 5px;
 }
 
 .player-entry:not(:first-child) {
   padding-top: 10px;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-width: 3px;
+  overflow: hidden;
 }
