@@ -5,10 +5,11 @@
   left:0;
   width: 225px;
   background-color: var(--shade2);
-  outline: auto;
   overflow: hidden;
   
   display: flex;
+  
+  box-shadow: 2px 0px 4px 2px var(--shadow);
 }
 
 .player-list {
@@ -18,12 +19,14 @@
   overflow: scroll;
 }
 
+.player-entry:nth-child(odd) {
+  background-color: var(--shade);
+}
+
 .player-entry {
   padding: 5px;
-  border: 1px solid grey;
-  border-radius: 3px;
 }
 
 .player-entry:not(:first-child) {
-  margin-top: 10px;
+  padding-top: 10px;
 }
