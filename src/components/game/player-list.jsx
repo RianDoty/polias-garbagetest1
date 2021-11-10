@@ -4,41 +4,6 @@ const PlayerList = () => {
   
   return (
   <div className='player-list'>
-    <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
-      <PlayerEntry player={{name: 'hehe'}}/>
   </div>
   )
 }
