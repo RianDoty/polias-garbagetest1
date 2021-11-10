@@ -47,7 +47,7 @@ const PlayerEntry = ({player: {name='Unknown', cardID}}) => {
   return (
     <div className='player-entry'>
       <Avatar cardID={cardID}/>
-      {name}
+      <PlayerInfo name={name}/>
     </div>
   )
 }
@@ -64,10 +64,10 @@ const Avatar = ({cardID = 0}) => {
 
 const PlayerInfo = ({name='Unknown', role='Spectating'}) => {
   return (
-    <>
-      <p>{name}</p>
-      <p className='muted'></p>
-    </>
+    <div class='player-info'>
+      <div>{name}</div>
+      <div className='muted'>{role}</div>
+    </div>
   )
 }
 

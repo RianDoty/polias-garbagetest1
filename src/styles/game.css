@@ -53,6 +53,15 @@
   padding-top: 10px;
 }
 
+.player-info {
+  padding-left: 5px;
+  display: inline-block;
+}
+
+.rank {
+  
+}
+
 .avatar {
   height: 40px;
   width: 40px;
