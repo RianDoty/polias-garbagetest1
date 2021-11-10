@@ -4,7 +4,9 @@ import RoomContext from '../../contexts/room';
 
 const UserList = () => {
   const code = useContext(RoomContext);
-  const users = useSync(`room users `)
+  const users = useSync(`room users ${code}`);
+  
+  const entries = Object.values(users).map(u => <UserEntry user={u}/>)
   
   return (
   <div className='user-list'>

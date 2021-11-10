@@ -10,6 +10,7 @@ class Room {
     
     this.players = {}
     
+    //Users: {name, cardID}
     this.usersSync = new SyncHost(io, `room users ${code}`, {});
     this.stateSync = new SyncHost(io, `room state ${code}`, {
       state: 'lobby'
