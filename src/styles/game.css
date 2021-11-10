@@ -32,12 +32,12 @@
  
 /* Handle */
 .player-list::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: var(--highlight2); 
 }
 
 /* Handle on hover */
 .player-list::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: var(--highlight); 
 }
 
 .player-entry:nth-child(odd) {

@@ -43,7 +43,7 @@ const PlayerList = () => {
   )
 }
 
-const PlayerEntry = ({player: {name, cardID}}) => {
+const PlayerEntry = ({player: {name='Unknown', cardID}}) => {
   return (
     <div className='player-entry'>
       <Avatar cardID={cardID}/>
@@ -60,6 +60,15 @@ const Avatar = ({cardID = 0}) => {
   const image = avatars[cardID] || avatars[0];
   
   return <img src={image} className='avatar'/>;
+}
+
+const PlayerInfo = ({name='Unknown', role='Spectating'}) => {
+  return (
+    <>
+      <p>{name}</p>
+      <p className='muted'></p>
+    </>
+  )
 }
 
 export default PlayerList
