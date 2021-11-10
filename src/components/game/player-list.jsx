@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useSync } from '../../hooks/sync';
 
 const PlayerList = () => {
+  
   
   return (
   <div className='player-list'>
