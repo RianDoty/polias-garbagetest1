@@ -32,16 +32,13 @@
  
 /* Handle */
 .player-list::-webkit-scrollbar-thumb {
-  background: var(--highlight2); 
+  background: var(--highlight2);
+  border-radius: 2px;
 }
 
 /* Handle on hover */
 .player-list::-webkit-scrollbar-thumb:hover {
   background: var(--highlight); 
-}
-
-.player-entry:nth-child(odd) {
-  background-color: var(--shade);
 }
 
 .player-entry {
@@ -51,6 +48,7 @@
 
 .player-entry:not(:first-child) {
   padding-top: 10px;
+  border-top: 1px solid #444;
 }
 
 .player-info {
