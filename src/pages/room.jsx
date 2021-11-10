@@ -4,6 +4,7 @@ import SyncProvider from '../components/sync-provider';
 //Game-related stuff
 import useGame from '../hooks/game';
 import GameContext from '../contexts/game';
+import RoomContext from '../contexts/room'
 
 //Game components
 import SideBar from '../components/game/side-bar'
