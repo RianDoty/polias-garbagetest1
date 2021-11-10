@@ -18,9 +18,9 @@ export default function GameMain({params}) {
   
   return (
     <>
-      <SyncProvider keyword={''}>
+      <RoomContext.Provider value={code}>
         <SideBar/>
-      </SyncProvider>
+      </RoomContext.Provider>
     </>
   )
 }

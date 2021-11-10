@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 
-import PlayerList from './player-list';
+import UserList from './user-list';
 
 const SideBar = ({players}) => {
   return ( 
     <div className='left-side-bar'>
-      <PlayerList/>
+      <UserList/>
     </div>
   )
 }
