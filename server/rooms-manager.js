@@ -21,5 +21,9 @@ module.exports = io => {
       //Send the host to the room
       ack(code);
     });
+    
+    socket.on('join room', (code) => {
+      rooms[code].join(socket);
+    })
   });
 };

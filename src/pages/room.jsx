@@ -15,7 +15,7 @@ import '../styles/game.css'
 
 export default function RoomMain({params}) {
   const {code} = params;
-  const game = useGame(code);
+  const room = useRoom(code);
   
   return (
     <>

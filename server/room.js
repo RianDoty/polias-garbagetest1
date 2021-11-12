@@ -1,4 +1,5 @@
 const SyncHost = require('./sync')
+const User = require('./user')
 
 class Room {
   constructor(io, code, host, roomListHost, {name = 'unnamed', hostName = 'unnamed'} = {}) {
@@ -8,7 +9,7 @@ class Room {
     this.name = name;
     this.hostName = hostName;
     
-    this.players = {}
+    this.users = {}
     
     //Users: {name, cardID}
     this.usersSync = new SyncHost(io, `room users ${code}`, {});
@@ -18,12 +19,21 @@ class Room {
     this.roomListSync = roomListHost
   }
   
+  join(socket, {name}) {
+    //Create a user for the socket
+    const user = new User(socket, {name});
+    
+    //Update users
+    this.users[socket.id] = socket;
+    this.usersSync.create(socket.id, )
+  }
+  
   template() {
     return {
       name: this.name,
       code: this.code,
       hostName: this.hostName,
-      pCount: Object.keys(this.players).length,
+      pCount: Object.keys(this.users).length,
       pMax: '∞'
     }
   }

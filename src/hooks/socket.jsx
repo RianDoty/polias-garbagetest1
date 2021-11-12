@@ -21,14 +21,11 @@ export const useSocketCallbacks = (callbackData) => {
   },[callbackData])
 }
 
-export const useSocketFetch = (name, ...data) => { //...data, ack, cleanup
-  const cleanup = data.pop();
+export const useSocketFetch = (name, ...data) => { //...data, ack
   const ack = data.pop();
-  if (!ack) ack = cleanup;
   
   useEffect(()=>{
     socket.emit(name, ...data, ack)
   // eslint-disable-next-line
-    return cleanup
   },[]); //eslint is not happy about this, but this is defined as only running once!
 }
