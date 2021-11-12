@@ -21,8 +21,14 @@ const useSync = keyword => {
     },
     [`sync update ${keyword}`]: (key, prop, value) => {
       setStore(store => {
-        if (prop) store[key][prop] = value;
-        else store
+        if (!value) {
+          value = prop;
+          
+          store[key] = value;
+          return store
+        }
+        store[key][prop] = value
+        
         return store
       })
     },
