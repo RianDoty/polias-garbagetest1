@@ -1,8 +1,9 @@
 import React from 'react';
 
 import useSync from './sync';
-import { useSocketFetch } from './socket';
+import { useSocket, useSocketFetch } from './socket';
 
 export default function useRoom(code) {
-  useSocketFetch(`join room ${code}`)
+  const socket = useSocket()
+  useSocketFetch('join room', code, null, ()=>socket.emit('leave room', code));
 }
