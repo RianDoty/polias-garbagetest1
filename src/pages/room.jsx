@@ -3,6 +3,7 @@ import SyncProvider from '../components/sync-provider';
 
 //Game-related stuff
 import useGame from '../hooks/game';
+import useRoom from '../hooks/room';
 import GameContext from '../contexts/game';
 import RoomContext from '../contexts/room'
 
@@ -12,7 +13,7 @@ import SideBar from '../components/game/side-bar'
 //Style
 import '../styles/game.css'
 
-export default function GameMain({params}) {
+export default function RoomMain({params}) {
   const {code} = params;
   const game = useGame(code);
   
