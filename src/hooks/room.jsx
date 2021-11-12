@@ -7,7 +7,7 @@ import UserContext from '../contexts/user';
 
 function stripFunctions(obj) {
   const clone = Object.assign({}, obj)
-  clone.forEach((i,v) => {
+  Object.entries(clone).forEach((i,v) => {
     if (typeof(v) === 'function') delete clone[i];
   })
   return clone

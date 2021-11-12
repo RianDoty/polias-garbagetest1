@@ -25,7 +25,12 @@ class Room {
     
     //Update users
     this.users[socket.id] = socket;
-    this.usersSync.create(socket.id, )
+    this.usersSync.create(socket.id, user.template())
+    this.updateList('pCount', this.pCount)
+  }
+  
+  get pCount() {
+    return Object.keys(this.users).length
   }
   
   template() {
@@ -33,7 +38,7 @@ class Room {
       name: this.name,
       code: this.code,
       hostName: this.hostName,
-      pCount: Object.keys(this.users).length,
+      pCount: this.pCount,
       pMax: '∞'
     }
   }
