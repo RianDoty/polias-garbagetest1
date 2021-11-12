@@ -19,7 +19,7 @@ class Room {
     this.roomListSync = roomListHost
   }
   
-  join(socket, {name}) {
+  join(socket, {name='unknown'}={}) {
     //Create a user for the socket
     const user = new User(socket, {name});
     
