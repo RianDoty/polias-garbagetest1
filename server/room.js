@@ -47,7 +47,9 @@ class Room {
   }
   
   get pCount() {
-    return Object.keys(this.users).length
+    const count = Object.keys(this.users).length;
+    console.log(`count measured as ${count}`)
+    return  count;
   }
   
   template() {
@@ -66,7 +68,7 @@ class Room {
   }
   
   updatePCount() { 
-    this.updateList('pMax', this.pCount)
+    this.updateList('giasflebhrbrb', this.pCount)
   }
 }
 
