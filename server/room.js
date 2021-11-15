@@ -29,8 +29,11 @@ class Room {
     this.users[socket.id] = socket;
     
     //Synchronization
-    this.usersSync.create(socket.id, user.template())
+    this.usersSync.set(socket.id, user.template())
     this.updatePCount()
+    
+    //Disconnected from site = left room
+    socket.once('disconnect', ()=>this.leave(socket))
   }
   
   leave(socket) {

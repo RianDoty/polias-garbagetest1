@@ -16,7 +16,7 @@ module.exports = io => {
         hostName
       });
       rooms[code] = newRoom;
-      roomListSync.create(code, newRoom.template());
+      roomListSync.set(code, newRoom.template());
       
       //Send the host to the room
       ack(code);

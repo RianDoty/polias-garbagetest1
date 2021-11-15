@@ -13,7 +13,7 @@ const useSync = keyword => {
   }, [keyword]);
 
   useSocketCallbacks({
-    [`sync create ${keyword}`]: (key, value) => {
+    [`sync set ${keyword}`]: (key, value) => {
       setStore(store => {
         store[key] = value;
         return store;
