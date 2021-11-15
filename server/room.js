@@ -1,6 +1,10 @@
 const SyncHost = require('./sync')
 const User = require('./user')
 
+function* iterator() {
+  
+}
+
 class Room {
   constructor(io, code, host, roomListHost, {name = 'unnamed', hostName = 'unnamed'} = {}) {
     this.io = io;
@@ -27,6 +31,10 @@ class Room {
     this.users[socket.id] = socket;
     this.usersSync.create(socket.id, user.template())
     this.updateList('pCount', this.pCount)
+  }
+  
+  leave(socket) {
+    
   }
   
   get pCount() {
