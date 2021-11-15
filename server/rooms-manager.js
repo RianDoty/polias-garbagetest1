@@ -25,5 +25,9 @@ module.exports = io => {
     socket.on('join room', (code) => {
       rooms[code].join(socket);
     })
+    
+    socket.on('leave room', (code) => {
+      rooms[code].leave(socket);
+    })
   });
 };

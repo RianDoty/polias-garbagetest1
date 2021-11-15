@@ -2,7 +2,6 @@ const noop = () => {};
 
 class SyncHost {
   constructor(io, keyword, startingData = {}) {
-    console.log(!!io);
     this.io = io;
     this.keyword = keyword;
     this.data = startingData;
@@ -20,10 +19,7 @@ class SyncHost {
 
     data[key] = value;
 
-    console.log("sync create");
-
     io.to(keyword).emit(`sync create ${keyword}`, key, value);
-    console.log("emit completed");
   }
 
   update(key, prop, value) {

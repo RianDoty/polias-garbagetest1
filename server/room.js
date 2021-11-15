@@ -1,9 +1,7 @@
 const SyncHost = require('./sync')
 const User = require('./user')
 
-function* iterator() {
-  
-}
+
 
 class Room {
   constructor(io, code, host, roomListHost, {name = 'unnamed', hostName = 'unnamed'} = {}) {
@@ -29,12 +27,20 @@ class Room {
     
     //Update users
     this.users[socket.id] = socket;
+    
+    //Synchronization
     this.usersSync.create(socket.id, user.template())
-    this.updateList('pCount', this.pCount)
+    this.updatePCount()
   }
   
   leave(socket) {
+    console.log(`leaving socket ${socket.id}`)
+    if (!this.users[socket.id]) return; //can't have a socket that never joined leave
     
+    //Update users
+    delete this.users[socket.id]
+    this.usersSync.delete(socket.id);
+    this.updatePCount();
   }
   
   get pCount() {
@@ -53,6 +59,10 @@ class Room {
   
   updateList(prop, value) {
     this.roomListSync.update(this.code, prop, value);
+  }
+  
+  updatePCount() {
+    this.updateList('pCount', this.pCount)
   }
 }
 
