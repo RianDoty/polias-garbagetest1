@@ -65,8 +65,8 @@ class Room {
     this.roomListSync.update(this.code, prop, value);
   }
   
-  updatePCount() {
-    this.updateList('pCount', this.pCount)
+  updatePCount() { 
+    this.updateList('pMax', this.pCount)
   }
 }
 
