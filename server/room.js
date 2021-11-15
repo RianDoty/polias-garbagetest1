@@ -61,6 +61,7 @@ class Room {
   }
   
   updateList(prop, value) {
+    console.log(`updating ${prop} with ${value}`)
     this.roomListSync.update(this.code, prop, value);
   }
   

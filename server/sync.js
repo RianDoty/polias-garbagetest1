@@ -15,7 +15,11 @@ class SyncHost {
   set(key, value) {
     const { data, io, keyword } = this;
 
+    console.log(data);
+    console.log(data[key]);
     data[key] = value;
+    console.log(data);
+    console.log(data[key]);
 
     io.to(keyword).emit(`sync set ${keyword}`, key, value);
   }
@@ -27,7 +31,14 @@ class SyncHost {
       value = prop;
       data[key] = value;
     }
+    
+    console.log(data)
+    console.log(data[key])
+    console.log(data[key][prop])
     data[key][prop] = value;
+    console.log(data)
+    console.log(data[key])
+    console.log(data[key][prop])
 
     io.to(keyword).emit(`sync update ${keyword}`, key, prop, value);
   }
