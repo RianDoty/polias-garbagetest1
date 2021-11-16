@@ -15,11 +15,11 @@ const UserList = () => {
   )
 }
 
-const UserEntry = ({user: {name='Unknown', cardID}}) => {
+const UserEntry = ({user: {name='Unknown', cardID, role}}) => {
   return (
     <div className='user-entry'>
       <Avatar cardID={cardID}/>
-      <UserInfo name={name}/>
+      <UserInfo name={name} role={role}/>
     </div>
   )
 }

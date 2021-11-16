@@ -68,7 +68,7 @@ class Room {
   }
   
   updatePCount() { 
-    this.updateList('giasflebhrbrb', this.pCount)
+    this.updateList('pCount', this.pCount)
   }
 }
 

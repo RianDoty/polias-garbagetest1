@@ -15,16 +15,13 @@ class SyncHost {
   set(key, value) {
     const { data, io, keyword } = this;
     console.log(`setting ${key} ${value}`)
-
-    console.log(data);
+    
     data[key] = value;
-    console.log(data);
     
     io.to(keyword).emit(`sync set ${keyword}`, key, value);
   }
 
   update(key, prop, value) {
-    console.log(`updating ${key} ${prop} ${value}`)
     const { data, io, keyword } = this;
 
     if (value === null) {
@@ -32,20 +29,15 @@ class SyncHost {
       data[key] = value;
     }
     
-    console.log(data);
     data[key][prop] = value;
-    console.log(data);
 
     io.to(keyword).emit(`sync update ${keyword}`, key, prop, value);
   }
 
   delete(key) {
     const { data, io, keyword } = this;
-    console.log(`deleting ${key}`)
 
-    console.log(data);
     delete data[key];
-    console.log(data);
 
     io.to(keyword).emit(`sync delete ${keyword}`, key);
   }

@@ -22,8 +22,8 @@ module.exports = io => {
       ack(code);
     });
     
-    socket.on('join room', (code) => {
-      rooms[code].join(socket);
+    socket.on('join room', (code, template) => {
+      rooms[code].join(socket, template);
     })
     
     socket.on('leave room', (code) => {

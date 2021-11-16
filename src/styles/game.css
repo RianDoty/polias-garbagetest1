@@ -12,7 +12,7 @@
   box-shadow: 2px 0px 4px 2px var(--shadow);
 }
 
-.player-list {
+.user-list {
   width: 100%;
   padding: 5px;
   
@@ -21,17 +21,17 @@
 
 /** Scroll bar **/
 /* width */
-.player-list::-webkit-scrollbar {
+.user-list::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
-.player-list::-webkit-scrollbar-track {
+.user-list::-webkit-scrollbar-track {
   background: var(--shade2) 
 }
  
 /* Handle */
-.player-list::-webkit-scrollbar-thumb {
+.user-list::-webkit-scrollbar-thumb {
   background: var(--highlight2);
   border-radius: 2px;
 }
