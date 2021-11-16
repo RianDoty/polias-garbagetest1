@@ -47,7 +47,8 @@
 }
 
 .this-user {
-  background: var(--highlight2)
+  background: var(--highlight3);
+  border-radius: 3px;
 }
 
 .user-entry:not(:first-child) {
