@@ -6,10 +6,11 @@ const UserList = () => {
   const code = useContext(RoomContext);
   const users = useSync(`room users ${code}`);
   
-  const entries = Object.values(users).map(u => <UserEntry user={u}/>)
+  const entries = Object.values(users).map(u => (<UserEntry user={u}/>))
   
   return (
   <div className='user-list'>
+      {entries}
   </div>
   )
 }
@@ -23,10 +24,10 @@ const UserEntry = ({user: {name='Unknown', cardID}}) => {
   )
 }
 
-const avatars = [
-  'https://cdn.glitch.me/35125d36-1414-4625-886d-50b6771f7d06%2Fbaseavatar.png?v=1636495856765',
+const avatars = {
+  0: 'https://cdn.glitch.me/35125d36-1414-4625-886d-50b6771f7d06%2Fbaseavatar.png?v=1636495856765',
   
-]
+}
 const Avatar = ({cardID = 0}) => {
   const image = avatars[cardID] || avatars[0];
   

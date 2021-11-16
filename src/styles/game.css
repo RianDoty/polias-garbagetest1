@@ -37,21 +37,21 @@
 }
 
 /* Handle on hover */
-.player-list::-webkit-scrollbar-thumb:hover {
+.user-list::-webkit-scrollbar-thumb:hover {
   background: var(--highlight); 
 }
 
-.player-entry {
+.user-entry {
   text-align: left;
   padding: 5px;
 }
 
-.player-entry:not(:first-child) {
+.user-entry:not(:first-child) {
   padding-top: 10px;
   border-top: 1px solid #444;
 }
 
-.player-info {
+.user-info {
   padding-left: 5px;
   display: inline-block;
 }
