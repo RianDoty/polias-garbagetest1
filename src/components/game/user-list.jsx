@@ -34,7 +34,7 @@ const Avatar = ({cardID = 0}) => {
   return <img src={image} className='avatar'/>;
 }
 
-const UserInfo = ({name='Unknown', role='Spectating'}) => {
+const UserInfo = ({name='Unknown', role='Chillin\''}) => {
   return (
     <div class='user-info'>
       <div>{name}</div>
