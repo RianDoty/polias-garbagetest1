@@ -1,12 +1,14 @@
 import { useState, useEffect, useContext } from 'react';
 import useSync from '../../hooks/sync';
 import RoomContext from '../../contexts/room';
+import { useSocket } from '../../hooks/socket';
 
 const UserList = () => {
   const code = useContext(RoomContext);
   const users = useSync(`room users ${code}`);
+  const socket = useSocket();
   
-  const entries = Object.values(users).map(u => (<UserEntry user={u}/>))
+  const entries = Object.values(users).map(u => (<UserEntry user={u} me={u.socketId === socket.id}/>))
   
   return (
   <div className='user-list'>
@@ -15,9 +17,9 @@ const UserList = () => {
   )
 }
 
-const UserEntry = ({user: {name='Unknown', cardID, role}}) => {
+const UserEntry = ({user: {name='Unknown', cardID, role}, me}) => {
   return (
-    <div className='user-entry'>
+    <div className={`user-entry${me ? ' this-user' : ''}`}>
       <Avatar cardID={cardID}/>
       <UserInfo name={name} role={role}/>
     </div>

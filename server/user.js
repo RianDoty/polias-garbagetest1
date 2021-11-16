@@ -5,8 +5,9 @@ class User {
   }
   
   template() {
-    const {name} = this;
-    return {name}
+    const {name, socket} = this;
+    const socketId = socket.id;
+    return {name, socketId}
   }
 }
 
