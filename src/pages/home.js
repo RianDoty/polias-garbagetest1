@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import { useLocation, Link } from "wouter";
 import { useSocket } from "../hooks/socket";
-import useSync from '../hooks/sync';
+import useSync from "../hooks/sync";
 
 import UserContext from "../contexts/user";
 
@@ -25,7 +25,7 @@ const CellHeader = ({ children }) => (
   <div className="cell-header">{children}</div>
 );
 
-const Error = ({ children }) => <span className='error'>{children}</span>
+const Error = ({ children }) => <span className="error">{children}</span>;
 
 //Displays a form for the user to enter their name
 const NameEntry = ({ user }) => {
@@ -68,24 +68,24 @@ const RoomCreator = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useLocation();
   const socket = useSocket();
-  const user = useContext(UserContext)
+  const user = useContext(UserContext);
 
   const onSubmit = e => {
     e.preventDefault();
-    
-    if (!user.name || user.name === 'Unnamed') {
-      setErr('Set your name!')
+
+    if (!user.name || user.name === "Unnamed") {
+      setErr("Set your name!");
       return false;
     }
-    
-    console.log('submitted')
+
+    console.log("submitted");
     //Tell the server to create a room with the given name
-    socket.emit("create-room", {name: user.name}, name, code => {
+    socket.emit("create-room", { name: user.name }, name, code => {
       //After the room is created with a random code, join that room
       setLocation(`/game/${code}`);
     });
   };
-  
+
   let errComponent;
   if (err) {
     errComponent = <Error>{err}</Error>;
@@ -108,20 +108,31 @@ const RoomCreator = () => {
 
 //Displays a list of every ongoing room
 const RoomList = () => {
-  const rooms = useSync('rooms');
-  
-  const e = Object.entries(rooms).map(([i,r]) => <div key={i}><RoomEntry room={r}/></div>);
+  const rooms = useSync("rooms");
 
-  return <div className='dashboard-list'>{e}</div>;
+  const e = Object.entries(rooms).map(([i, r]) => (
+    <div key={i}>
+      <RoomEntry room={r} />
+    </div>
+  ));
+
+  return <div className="dashboard-list">{e}</div>;
 };
 
-const RoomEntry = ({room}) => {
-  const {code, name, hostName, pCount, pMax} = room
+const RoomEntry = ({ room }) => {
+  const { code, name, hostName, pCount, pMax } = room;
   return (
     <Link href={`/game/${code}`}>
       <strong>{name}</strong>
-      <div className='muted'>
-        Hosted by {hostName} <span className='p-4px'><strong>{pCount}<span className='f-80'> OF </span>{pMax}</strong></span>
+      <div className="muted">
+        Hosted by {hostName}{" "}
+        <span className="p-4px">
+          <strong>
+            {pCount}
+            <span className="f-80"> OF </span>
+            {pMax}
+          </strong>
+        </span>
       </div>
     </Link>
   );
@@ -130,6 +141,20 @@ const RoomEntry = ({room}) => {
 //Page
 export default function Home() {
   const user = useContext(UserContext);
+
+  let middleSection;
+  if (user.name) {
+    middleSection = (
+      <Section>
+        <Cell wClass="w-3-5" header="Current Games">
+          <RoomList />
+        </Cell>
+        <Cell wClass="w-2-5" header="Make a game">
+          <RoomCreator />
+        </Cell>
+      </Section>
+    );
+  }
 
   return (
     <div className="narrow">
@@ -149,14 +174,7 @@ export default function Home() {
           <NameEntry user={user} />
         </Cell>
       </Section>
-      <Section>
-        <Cell wClass="w-3-5" header="Current Games">
-          <RoomList />
-        </Cell>
-        <Cell wClass="w-2-5" header="Make a game">
-          <RoomCreator />
-        </Cell>
-      </Section>
+      {middleSection}
       <Section>
         <BottomLogo />
       </Section>
