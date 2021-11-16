@@ -27,7 +27,7 @@ class SyncHost {
     console.log(`updating ${key} ${prop} ${value}`)
     const { data, io, keyword } = this;
 
-    if (!value) {
+    if (value === null) {
       value = prop;
       data[key] = value;
     }
