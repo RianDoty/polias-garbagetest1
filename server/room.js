@@ -47,7 +47,7 @@ class Room {
   }
   
   get pCount() {
-    const count = Object.keys(this.users).length + 1;
+    const count = Object.keys(this.users).length - 1;
     console.log(`count measured as ${count}`)
     return  count;
   }
