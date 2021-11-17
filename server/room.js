@@ -7,11 +7,11 @@ class Room {
   constructor(io, code, host, roomListHost, {name = 'unnamed', hostName = 'unnamed'} = {}) {
     this.io = io;
     this.code = code;
-    this.host = host;
     this.name = name;
     this.hostName = hostName;
-    
     this.users = {}
+    
+    this.assignHost(host);
     
     //Users: {name, cardID}
     this.usersSync = new SyncHost(io, `room users ${code}`, {});
@@ -45,7 +45,12 @@ class Room {
     this.usersSync.delete(socket.id);
     this.updatePCount();
     
-    //The host leaving 
+    //The host leaving means we have to change things up
+    if (this.isHost(socket)) {
+      //Pick a 'random' user
+      const randomUser = Object.values(this.users)[0];
+      this.assignHost(randomUser);
+    }
   }
   
   get pCount() {
@@ -71,6 +76,15 @@ class Room {
   
   updatePCount() { 
     this.updateList('pCount', this.pCount)
+  }
+  
+  isHost(socket) {
+    return (socket.id === this.host.id);
+  }
+  
+  assignHost(socket) {
+    this.host = socket;
+    this.usersSync.update(socket.id, 'host', true);
   }
 }
 
