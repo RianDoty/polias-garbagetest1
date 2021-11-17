@@ -44,6 +44,8 @@ class Room {
     delete this.users[socket.id]
     this.usersSync.delete(socket.id);
     this.updatePCount();
+    
+    //The host leaving 
   }
   
   get pCount() {
