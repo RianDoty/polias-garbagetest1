@@ -1,12 +1,19 @@
 import { useState, useEffect, useContext } from 'react';
 import useSync from '../../hooks/sync';
+import UserContext from '../../contexts/user';
 import RoomContext from '../../contexts/room';
 import { useSocket } from '../../hooks/socket';
 
 const UserList = () => {
   const code = useContext(RoomContext);
-  const users = useSync(`room users ${code}`);
+  const user = useContext(UserContext);
   const socket = useSocket();
+  const users = useSync(`room users ${code}`, {
+    [socket.id]: {
+      name: user.name,
+      socketId: socket.id
+    }
+  });
   
   const entries = Object.values(users).map(u => (<UserEntry user={u} me={u.socketId === socket.id}/>))
   
