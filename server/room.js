@@ -11,14 +11,15 @@ class Room {
     this.hostName = hostName;
     this.users = {}
     
-    this.assignHost(host);
-    
+    // Synchronization
     //Users: {name, cardID}
     this.usersSync = new SyncHost(io, `room users ${code}`, {});
     this.stateSync = new SyncHost(io, `room state ${code}`, {
       state: 'lobby'
     });
     this.roomListSync = roomListHost
+    
+    this.assignHost(host);
   }
   
   join(socket, {name='unknown'}={}) {
