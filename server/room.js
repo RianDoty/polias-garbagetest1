@@ -19,7 +19,7 @@ class Room {
     });
     this.roomListSync = roomListHost
     
-    this.assignHost(host);
+    this.host = host
   }
   
   join(socket, {name='unknown'}={}) {
@@ -36,7 +36,10 @@ class Room {
     //Disconnected from site = left room
     socket.once('disconnect', ()=>this.leave(socket))
     
-    //If the
+    //If the user is the only user in the room, give it the Host role
+    if (this.pCount == 1) {
+      this.assignHost(socket);
+    }
   }
   
   leave(socket) {
