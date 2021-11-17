@@ -34,6 +34,8 @@ class Room {
     
     //Disconnected from site = left room
     socket.once('disconnect', ()=>this.leave(socket))
+    
+    //If the
   }
   
   leave(socket) {
@@ -45,8 +47,14 @@ class Room {
     this.usersSync.delete(socket.id);
     this.updatePCount();
     
+    //If every user is gone, the room shouldn't exist
+    //Let users join a room for a bit even if it's empty
+    if (this.pCount == 0) {
+      
+    }
+    
     //The host leaving means we have to change things up
-    if (this.isHost(socket)) {
+    if (this.isHost(socket) && this.pCount > 0) {
       //Pick a 'random' user
       const randomUser = Object.values(this.users)[0];
       this.assignHost(randomUser);
