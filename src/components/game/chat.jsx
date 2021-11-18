@@ -3,7 +3,7 @@ import useSync from "../../hooks/sync";
 
 const BottomChat = () => {
   return (
-    <div className="bottom-chat">
+    <div className="chat">
       <MessageList/>
       <MessageEntry/>
     </div>

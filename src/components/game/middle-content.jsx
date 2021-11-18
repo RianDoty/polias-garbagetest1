@@ -1,11 +1,11 @@
 import React from 'react';
 
-import BottomChat from './bottom-chat';
+import Chat from './chat';
 
 const MiddleContent = () => {
   return (
     <div className='middle-content'>
-      <BottomChat/>
+      <Chat/>
     </div>
   )
 }
