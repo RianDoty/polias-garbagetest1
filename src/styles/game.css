@@ -89,6 +89,7 @@
   box-sizing: border-box;
   backdrop-filter: blur(10px);
 }
+
 .message {
   border: none;
   padding: 0 1rem;
@@ -96,9 +97,11 @@
   border-radius: 2rem;
   margin: 0.25rem;
 }
+
 .input:focus {
   outline: none;
 }
+
 .form > button {
   background: #333;
   border: none;
@@ -109,16 +112,16 @@
   color: #fff;
 }
 
-.messages {
+.message-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.messages > li {
+.message-list > li {
   padding: 0.5rem 1rem;
 }
 
-.messages > li:nth-child(odd) {
+.message-list > li:nth-child(odd) {
   background: #efefef;
 }
