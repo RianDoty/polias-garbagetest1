@@ -105,9 +105,10 @@
   display: flex;
   height: 3rem;
   box-sizing: border-box;
+  outline: auto;
 }
 
-.message {
+.message-entry > input {
   border: none;
   padding: 0 1rem;
   flex-grow: 1;
@@ -115,11 +116,11 @@
   margin: 0.25rem;
 }
 
-.input:focus {
+.message-entry > input:focus {
   outline: none;
 }
 
-.form > button {
+.message-entry > button {
   background: #333;
   border: none;
   padding: 0 1rem;

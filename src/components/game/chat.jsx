@@ -31,7 +31,8 @@ const Message = ({data: {user, content}}) => {
 const MessageEntry = ({onSubmit}) => {
   return (
     <form className='message-entry' onSubmit={onSubmit}>
-    
+      <input/>
+      <button/>
     </form>
   )
 }
