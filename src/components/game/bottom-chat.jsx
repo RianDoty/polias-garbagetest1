@@ -10,7 +10,7 @@ const BottomChat = () => {
   );
 };
 
-const MessageList = ({messages}) => {
+const MessageList = ({messages=[]}) => {
   const messageComponents = messages.map(m => (<Message data={m}/>))
   
   return (
