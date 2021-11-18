@@ -1,3 +1,4 @@
+/*** Left Bar ***/ 
 .left-side-bar {
   position: absolute;
   top: 0;
@@ -12,6 +13,8 @@
   box-shadow: 2px 0px 4px 2px var(--shadow);
 }
 
+/** User List **/
+
 .user-list {
   width: 100%;
   padding: 5px;
@@ -19,7 +22,7 @@
   overflow: auto;
 }
 
-/** Scroll bar **/
+/* Scroll bar */
 /* width */
 .user-list::-webkit-scrollbar {
   width: 10px;
@@ -76,10 +79,18 @@
   overflow: hidden;
 }
 
-/* Middle Content */
+/** Middle Content **/
+.middle-content {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 225px;
+  right:0;
+}
 
+/* Chat */
 
-/*Chat*/
+/
 .message-entry {
   background: rgba(0, 0, 0, 0.15);
   padding: 0.25rem;
