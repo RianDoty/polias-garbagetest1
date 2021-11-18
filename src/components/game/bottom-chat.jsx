@@ -35,3 +35,5 @@ const MessageEntry = ({onSubmit}) => {
     </form>
   )
 }
+
+export default BottomChat;
