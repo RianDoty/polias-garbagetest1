@@ -6,6 +6,7 @@ const User = require('./user');
 module.exports = (io) => {
   io.on('connection', (socket) => {
     socket.user = new User(socket)
+    console.log('created user for socket')
     
     socket.on('set nickname', nickname => socket.user.setNickname(nickname));
   })

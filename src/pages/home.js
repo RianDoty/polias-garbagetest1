@@ -31,12 +31,17 @@ const Error = ({ children }) => <span className="error">{children}</span>;
 const NameEntry = ({ user }) => {
   const [inpVal, updateInpVal] = useState("");
   const [err, setErr] = useState("");
+  const socket = useSocket()
 
   function onSubmit(e) {
     e.preventDefault();
 
     setErr("");
-    if (inpVal) user.setName(inpVal);
+    if (inpVal) {
+      //The input is valid, set the user's name
+      user.setName(inpVal);
+      socket.emit('set nickname', inpVal);
+    }
     else setErr("Invalid name!");
   }
 
