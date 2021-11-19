@@ -1,7 +1,12 @@
 import { useState, useEffect, useContext } from "react";
 import useSync from "../../hooks/sync";
 
+import RoomContext from '../../contexts/room';
+
 const BottomChat = () => {
+  const code = useContext(RoomContext)
+  const messages = useSync(`room chat lobby ${code}`)
+  
   return (
     <div className="chat">
       <MessageList/>

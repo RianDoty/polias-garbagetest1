@@ -97,19 +97,19 @@
 /* Chat */
 .chat {
   width: 100%;
+  height: 100%;
   outline: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .message-entry {
   background: rgba(0, 0, 0, 0.15);
   padding: 0.25rem;
-  bottom: 0;
   left: 0;
   right: 0;
   display: flex;
   height: 3rem;
-  box-sizing: border-box;
-  outline: auto;
 }
 
 .message-entry > input {
@@ -125,7 +125,7 @@
 }
 
 .message-entry > button {
-  background: #333;
+  background: var(--highlight2);
   border: none;
   padding: 0 1rem;
   margin: 0.25rem;
@@ -138,8 +138,8 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  flex: 1 1;
-  height: 100px;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .message-list > li {

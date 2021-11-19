@@ -1,8 +1,6 @@
 const SyncHost = require('./sync')
 const User = require('./user')
 
-
-
 class Room {
   constructor(io, code, host, roomListHost, {name = 'unnamed', hostName = 'unnamed'} = {}) {
     this.io = io;

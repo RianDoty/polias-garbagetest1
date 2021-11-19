@@ -20,7 +20,7 @@ function App() {
         <TopBar/>
         <Router>
           <main className="app-main">
-            <PageRouter />
+            <PageRouter/>
           </main>
         </Router>
       </UserContext.Provider>
