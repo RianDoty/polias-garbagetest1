@@ -5,6 +5,10 @@ class User {
     this.host = false;
   }
   
+  setNickname(nickname) {
+    if (nickname !== '') this.nickname = nickname;
+  }
+  
   template() {
     const {name, socket, host} = this;
     const socketId = socket.id;

@@ -20,12 +20,11 @@ class Room {
     this.host = host
   }
   
-  join(socket, {name='unknown'}={}) {
-    //Create a user for the socket
-    const user = new User(socket, {name});
+  join(socket) {
+    const { user } = socket;
     
     //Update users
-    this.users[socket.id] = socket;
+    this.users[socket.id] = socket.user;
     
     //Synchronization
     this.usersSync.set(socket.id, user.template())
