@@ -8,7 +8,15 @@ const useSync = (keyword, def) => {
   const [store, setStore] = useVolatileState(def || {});
 
   useEffect(() => {
-    socket.emit(`sync subscribe ${keyword}`, s => setStore(s));
+    socket.emit(`sync subscribe ${keyword}`, s => setStore(def => {
+      //Prune out elements that were already defined by the client
+      //Prevents 'refreshing' info that the client already knows
+      Object.keys(def).forEach(key => {
+        if (s[key] !== null) delete s[key];
+      })
+      
+      return s;
+    }));
     return () => socket.emit(`sync unsubscribe ${keyword}`);
   }, [keyword]);
 

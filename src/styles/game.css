@@ -147,6 +147,10 @@
 }
 
 /*Border between messges*/
-.message-list > li:not(:first-child) {
+.message-list > li:not(:first-child)::after {
+  display: block;
   border-top: 1px solid var(--highlight);
+  width: 80%;
+  height: 100%;
+  outline: auto;
 }
