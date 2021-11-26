@@ -146,6 +146,7 @@
   padding: 0.5rem 1rem;
 }
 
-.message-list > li:nth-child(odd) {
-  background: #efefef;
+/*Border between messges*/
+.message-list > li:not(:first-child) {
+  border-top: 1px solid var(--highlight);
 }

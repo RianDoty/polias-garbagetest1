@@ -15,8 +15,23 @@ const BottomChat = () => {
   );
 };
 
-const MessageList = ({messages=[]}) => {
-  const messageComponents = messages.map(m => (<Message data={m}/>))
+const sampleMessages = {
+  a: {
+    author: 'me',
+    content: 'all your base'
+  },
+  b: {
+    author: 'myself',
+    content: 'are belong'
+  },
+  c: {
+    author: 'i',
+    content: 'to us'
+  }
+}
+
+const MessageList = ({messages=sampleMessages}) => {
+  const messageComponents = Object.values(messages).map(m => (<Message data={m}/>))
   
   return (
     <ul className='message-list'>
@@ -25,10 +40,11 @@ const MessageList = ({messages=[]}) => {
   )
 }
 
-const Message = ({data: {user, content}}) => {
+const Message = ({data: {author, content}}) => {
   return (
     <li className='message'>
-      {content}
+      <div>{author}</div>
+      <div>{content}</div>
     </li>
   )
 }
