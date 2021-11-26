@@ -26,6 +26,7 @@ module.exports = io => {
     
     socket.on('join room', (code, ack=noop) => {
       if (rooms[code]) rooms[code].join(socket);
+      console.log(ack);
       ack(true);
     })
     
