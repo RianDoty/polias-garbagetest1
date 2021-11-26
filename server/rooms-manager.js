@@ -4,6 +4,8 @@ const { randomCode, unregisterCode } = require("./random-code");
 
 const rooms = {};
 
+const noop = ()=>{};
+
 module.exports = io => {
   const roomListSync = new SyncHost(io, "rooms");
   io.on("connection", socket => {
@@ -22,12 +24,13 @@ module.exports = io => {
       ack(code);
     });
     
-    socket.on('join room', (code) => {
-      rooms[code].join(socket);
+    socket.on('join room', (code, ack=noop) => {
+      if (rooms[code]) rooms[code].join(socket);
+      ack(true);
     })
     
     socket.on('leave room', (code) => {
-      rooms[code].leave(socket);
+      if (rooms[code]) rooms[code].leave(socket);
     })
   });
 };
