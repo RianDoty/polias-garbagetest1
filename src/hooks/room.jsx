@@ -14,11 +14,10 @@ function stripFunctions(obj) {
 }
 
 export default function useRoom(code) {
-  const socket = useSocket()
-  const user = useContext(UserContext);
+  const socket = useSocket();
   
   useEffect(()=>{
-    socket.emit('join room', code, stripFunctions(user));
+    socket.emit('join room', code);
     return ()=>socket.emit('leave room', code);
   }, [])
 }
