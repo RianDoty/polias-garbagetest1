@@ -12,7 +12,7 @@ const useSync = (keyword, def) => {
       //Prune out elements that were already defined by the client
       //Prevents 'refreshing' info that the client already knows
       Object.keys(def).forEach(key => {
-        if (s[key] !== null) delete s[key];
+        delete s[key];
       })
       
       return s;
