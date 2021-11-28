@@ -10,6 +10,7 @@ const Chat = ({chatRoomName='lobby'}) => {
   const [messages, setMessages] = useSync(`room chat ${chatRoomName} ${code}`)
   const socket = useSocket();
   
+  const currentIndex
   const submitMessage = (content) => {
     const id = uuidv4();
     //Locally cache the message
