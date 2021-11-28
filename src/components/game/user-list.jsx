@@ -8,7 +8,7 @@ const UserList = () => {
   const code = useContext(RoomContext);
   const user = useContext(UserContext);
   const socket = useSocket();
-  const users = useSync(`room users ${code}`, {
+  const [users] = useSync(`room users ${code}`, {
     [socket.id]: {
       name: user.name,
       socketId: socket.id

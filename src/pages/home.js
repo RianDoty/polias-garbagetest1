@@ -113,7 +113,7 @@ const RoomCreator = () => {
 
 //Displays a list of every ongoing room
 const RoomList = () => {
-  const rooms = useSync("rooms");
+  const [rooms] = useSync("rooms");
 
   const e = Object.entries(rooms).map(([i, r]) => (
     <div key={i}>

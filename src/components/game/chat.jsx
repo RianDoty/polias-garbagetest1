@@ -5,7 +5,7 @@ import RoomContext from '../../contexts/room';
 
 const BottomChat = () => {
   const code = useContext(RoomContext)
-  const messages = useSync(`room chat lobby ${code}`)
+  const [messages, setMessages] = useSync(`room chat lobby ${code}`)
   
   return (
     <div className="chat">

@@ -48,7 +48,7 @@ const useSync = (keyword, def) => {
     }
   });
 
-  return store;
+  return [store, setStore];
 };
 
 export default useSync;
