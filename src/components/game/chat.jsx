@@ -10,13 +10,16 @@ const Chat = ({chatRoomName='lobby'}) => {
   const [messages, setMessages] = useSync(`room chat ${chatRoomName} ${code}`)
   const socket = useSocket();
   
-  const currentIndex
+  const currentIndex = Object.keys(messages).reduce(((big, cur) => cur > big ? cur : big), 0)
   const submitMessage = (content) => {
     const id = uuidv4();
     //Locally cache the message
     setMessages(m => {
-      
+      m[id] = {author: socket.id, content, index: currentIndex() + 1};
+      return m;
     })
+    
+    socket.emit(`create-message ${chatRoomName}`, id, content)
   }
   
   return (
