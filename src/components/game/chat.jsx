@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import useSync from "../../hooks/sync";
 import { useSocket } from '../../hooks/socket';
 
@@ -10,6 +11,8 @@ const Chat = ({chatRoomName='lobby'}) => {
   const socket = useSocket();
   
   const submitMessage = (content) => {
+    const id = uuidv4();
+    //Locally cache the message
     setMessages(m => {
       
     })
