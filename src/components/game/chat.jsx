@@ -1,11 +1,19 @@
 import { useState, useEffect, useContext } from "react";
 import useSync from "../../hooks/sync";
+import { useSocket } from '../../hooks/socket';
 
 import RoomContext from '../../contexts/room';
 
-const BottomChat = () => {
+const Chat = ({chatRoomName='lobby'}) => {
   const code = useContext(RoomContext)
-  const [messages, setMessages] = useSync(`room chat lobby ${code}`)
+  const [messages, setMessages] = useSync(`room chat ${chatRoomName} ${code}`)
+  const socket = useSocket();
+  
+  const submitMessage = (content) => {
+    setMessages(m => {
+      
+    })
+  }
   
   return (
     <div className="chat">
@@ -58,4 +66,4 @@ const MessageEntry = ({onSubmit}) => {
   )
 }
 
-export default BottomChat;
+export default Chat;

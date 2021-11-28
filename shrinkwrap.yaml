@@ -7,6 +7,7 @@ dependencies:
   react-scripts: 4.0.3
   socket.io: 4.3.1
   socket.io-client: 4.3.2
+  uuid: 8.3.2
   wouter: 2.7.5
 packages:
   /@babel/code-frame/7.10.4:
@@ -12903,7 +12904,6 @@ packages:
   /uuid/8.3.2:
     dev: false
     hasBin: true
-    optional: true
     resolution:
       integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
   /v8-compile-cache/2.3.0:
@@ -13561,4 +13561,5 @@ specifiers:
   react-scripts: ^4.0.3
   socket.io: ^4.3.1
   socket.io-client: ^4.3.2
+  uuid: ^8.3.2
   wouter: ^2.7.4
