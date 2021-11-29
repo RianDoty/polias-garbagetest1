@@ -147,5 +147,10 @@
 }
 
 .message-containter {
-  display: inline-bl
+  display: inline-block;
+  width: 100px;
+}
+
+* {
+  outline: auto;
 }

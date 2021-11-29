@@ -61,8 +61,8 @@ const Message = ({data: {author, content}}) => {
     <li className='message'>
       <Avatar size='50px'/>
       <div className='message-container'>
-        <div>{author}</div>
-        <div>{content}</div>
+        {author}
+        {content}
       </div>
       
     </li>
