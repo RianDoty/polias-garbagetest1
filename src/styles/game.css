@@ -149,9 +149,8 @@
 /*Border between messges*/
 .message-list > li:not(:first-child)::before {
   content: '';
-  display: block;
-  border-top: 1px solid var(--highlight);
+  position: absolute;
+  border-bottom: 1px solid var(--highlight);
   width: 80%;
-  height: 100%;
-  outline: auto;
+  left: 10%;
 }
