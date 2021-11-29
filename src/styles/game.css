@@ -145,3 +145,7 @@
 .message-list > .message {
   padding: 0.5rem 1rem;
 }
+
+.message-containter {
+  display: inline-bl
+}

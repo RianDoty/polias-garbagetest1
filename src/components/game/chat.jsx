@@ -59,9 +59,12 @@ const MessageList = ({messages=sampleMessages}) => {
 const Message = ({data: {author, content}}) => {
   return (
     <li className='message'>
-      <Avatar/>
-      <div>{author}</div>
-      <div>{content}</div>
+      <Avatar size='50px'/>
+      <div className='message-container'>
+        <div>{author}</div>
+        <div>{content}</div>
+      </div>
+      
     </li>
   )
 }
