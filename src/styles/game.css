@@ -140,17 +140,9 @@
   padding: 0;
   flex-grow: 1;
   width: 100%;
+  background: var(--shade)
 }
 
-.message-list > li {
+.message-list > .message {
   padding: 0.5rem 1rem;
-}
-
-/*Border between messges*/
-.message-list > li:not(:first-child)::before {
-  content: '';
-  position: absolute;
-  border-bottom: 1px solid var(--highlight);
-  width: 80%;
-  left: 10%;
 }

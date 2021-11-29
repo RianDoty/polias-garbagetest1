@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import useSync from "../../hooks/sync";
 import { useSocket } from '../../hooks/socket';
+import Avatar from './avatar'
 
 import RoomContext from '../../contexts/room';
 
@@ -58,6 +59,7 @@ const MessageList = ({messages=sampleMessages}) => {
 const Message = ({data: {author, content}}) => {
   return (
     <li className='message'>
+      <Avatar/>
       <div>{author}</div>
       <div>{content}</div>
     </li>
