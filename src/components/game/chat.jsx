@@ -8,6 +8,7 @@ import RoomContext from '../../contexts/room';
 
 const Chat = ({chatRoomName='lobby'}) => {
   const code = useContext(RoomContext)
+  const keyword = `room chat ${chatRoomName} ${code}`;
   const [messages, setMessages] = useSync(`room chat ${chatRoomName} ${code}`)
   const socket = useSocket();
   
@@ -21,7 +22,7 @@ const Chat = ({chatRoomName='lobby'}) => {
     })
     
     //Send the message to the server
-    socket.emit(`create-message ${chatRoomName}`, id, content)
+    socket.emit(`send-message ${keyword}`, id, content)
   }
   
   return (

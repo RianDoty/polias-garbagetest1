@@ -8,11 +8,13 @@ class ChatRoom {
     
     this.sync = new SyncHost(io, keyword);
     this.sockets = {};
+    
   }
   
   join(socket) {
     socket.join(this.keyword);
     this.sockets[socket.id] = socket;
+    this.connect(socket)
   }
   
   leave(socket) {
@@ -20,7 +22,22 @@ class ChatRoom {
     delete this.sockets[socket.id]
   }
   
+  connect(socket) {
+    socket.on(`send-message ${this.keyword}`, this.sendMessage);
+  }
   
+  disconnect(socket) {
+    socket.off(`send-message ${this.keyword}`, this.sendMessage);
+  }
+  
+  sendMessage(socket) {
+    return (id, content) => {
+      this.sync.create(id, {
+        author: socket.user,
+        content: content
+      })
+    }
+  }
 }
 
 module.exports = ChatRoom;
