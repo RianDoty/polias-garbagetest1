@@ -11,22 +11,23 @@ const Chat = ({chatRoomName='lobby'}) => {
   const [messages, setMessages] = useSync(`room chat ${chatRoomName} ${code}`)
   const socket = useSocket();
   
-  const currentIndex = Object.keys(messages).reduce(((big, cur) => cur > big ? cur : big), 0)
+  const currentKey = () => Object.keys(messages).reduce(((big, cur) => cur > big ? cur : big), 0)
   const submitMessage = (content) => {
     const id = uuidv4();
     //Locally cache the message
     setMessages(m => {
-      m[id] = {author: socket.id, content, index: currentIndex() + 1};
+      m[id] = {author: socket.id, content, key: currentKey() + 1};
       return m;
     })
     
+    //Send the message to the server
     socket.emit(`create-message ${chatRoomName}`, id, content)
   }
   
   return (
     <div className="chat">
-      <MessageList/>
-      <MessageEntry/>
+      <MessageList messages={messages}/>
+      <MessageEntry onSubmit={submitMessage}/>
     </div>
   );
 };
@@ -35,13 +36,15 @@ const MessageList = ({messages={}}) => {
   const messageComponents = Object.values(messages).map(m => (<Message data={m}/>))
   
   return (
-    <ul className='message-list'>
-      {messageComponents}
-    </ul>
+    <div className='message-list-container'>
+      <div className='message-list'>
+        {messageComponents}
+      </div>
+    </div>
   )
 }
 
-const Message = ({data: {author, content}}) => {
+const Message = ({data: {author, content, }}) => {
   return (
     <li className='message'>
       <Avatar size='50px'/>
@@ -54,9 +57,17 @@ const Message = ({data: {author, content}}) => {
 }
 
 const MessageEntry = ({onSubmit}) => {
+  const [content, setContent] = useState('')
+  
+  function handleSubmit(e) {
+    e.preventDefault();
+    
+    onSubmit(content);
+  }
+  
   return (
-    <form className='message-entry' onSubmit={onSubmit}>
-      <input/>
+    <form className='message-entry' onSubmit={handleSubmit}>
+      <input value={content} onChange={(e)=>setContent(e.target.value)}/>
       <button/>
     </form>
   )

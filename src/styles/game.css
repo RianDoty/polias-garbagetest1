@@ -133,13 +133,17 @@
   color: #fff;
 }
 
-.message-list {
+.message-list-container {
   list-style-type: none;
   margin: 0;
   padding: 0;
   flex-grow: 1;
   width: 100%;
   background: var(--shade)
+}
+
+.message-list {
+  
 }
 
 /* Messages */
