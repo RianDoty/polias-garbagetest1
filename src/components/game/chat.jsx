@@ -31,22 +31,7 @@ const Chat = ({chatRoomName='lobby'}) => {
   );
 };
 
-const sampleMessages = {
-  a: {
-    author: 'me',
-    content: 'all your base'
-  },
-  b: {
-    author: 'myself',
-    content: 'are belong'
-  },
-  c: {
-    author: 'i',
-    content: 'to us'
-  }
-}
-
-const MessageList = ({messages=sampleMessages}) => {
+const MessageList = ({messages={}}) => {
   const messageComponents = Object.values(messages).map(m => (<Message data={m}/>))
   
   return (

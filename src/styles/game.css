@@ -151,23 +151,19 @@
 
 .message > .avatar {
   height: 50px;
-  padding: 2px;
+  margin: 5px;
+  flex-shrink: 0;
 }
 
 .message-container {
-  position: relative;
   display: inline-block;
   height: 100%;
   flex-grow: 1;
-  width: calc(100% - 50px)
 }
 
 .message-author {
-  position: absolute;
   top: 2px;
   left: 2px;
-}
-
-* {
-  outline: auto;
+  font-weight: bold;
+  color: var(--highlight);
 }
