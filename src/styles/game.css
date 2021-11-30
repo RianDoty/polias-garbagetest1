@@ -148,10 +148,15 @@
   text-align: left;
 }
 
-.message-container {
-  display: block;
-  width: auto;
+.message > .avatar {
   height: 50px;
+}
+
+.message-container {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: calc(100% - 50px)
 }
 
 .message-author {
