@@ -7,11 +7,20 @@ class ChatRoom {
     this.keyword = keyword;
     
     this.sync = new SyncHost(io, keyword);
+    this.sockets = {};
   }
   
   join(socket) {
-    
+    socket.join(this.keyword);
+    this.sockets[socket.id] = socket;
   }
+  
+  leave(socket) {
+    socket.leave(this.keyword);
+    delete this.sockets[socket.id]
+  }
+  
+  
 }
 
 module.exports = ChatRoom;

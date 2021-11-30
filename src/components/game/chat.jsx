@@ -36,10 +36,8 @@ const MessageList = ({messages={}}) => {
   const messageComponents = Object.values(messages).map(m => (<Message data={m}/>))
   
   return (
-    <div className='message-list-container'>
-      <div className='message-list'>
-        {messageComponents}
-      </div>
+    <div className='message-list'>
+      {messageComponents}
     </div>
   )
 }
