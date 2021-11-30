@@ -133,7 +133,7 @@
   color: #fff;
 }
 
-.message-list-container {
+.message-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -141,10 +141,6 @@
   width: 100%;
   background: var(--shade);
   overflow: auto;
-}
-
-.message-list {
-  height: 100%;
 }
 
 /* Messages */
