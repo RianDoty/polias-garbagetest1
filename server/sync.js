@@ -29,6 +29,7 @@ class SyncHost {
       data[key] = value;
     }
     
+    if (!data[key]) return false;
     data[key][prop] = value;
 
     io.to(keyword).emit(`sync update ${keyword}`, key, prop, value);
