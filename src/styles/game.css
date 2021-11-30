@@ -142,14 +142,18 @@
   background: var(--shade)
 }
 
-.message-list > .message {
+/* Messages */
+.message {
   padding: 0.5rem 1rem;
+  text-align: left;
 }
 
-.message-containter {
+.message-container {
   display: inline-block;
-  width: 100px;
+  width: auto;
 }
+
+.message
 
 * {
   outline: auto;
