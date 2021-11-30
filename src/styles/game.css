@@ -146,16 +146,19 @@
 .message {
   padding: 0.5rem 1rem;
   text-align: left;
+  display: flex;
 }
 
 .message > .avatar {
   height: 50px;
+  padding: 2px;
 }
 
 .message-container {
   position: relative;
   display: inline-block;
   height: 100%;
+  flex-grow: 1;
   width: calc(100% - 50px)
 }
 
