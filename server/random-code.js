@@ -1,3 +1,4 @@
+//Generates a random code that cannot have a duplicate
 const usedCodes = {};
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");

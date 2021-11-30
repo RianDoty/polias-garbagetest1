@@ -1,6 +1,8 @@
 const SyncHost = require('./sync')
 const User = require('./user')
+const ChatRoomManager = require('./chat-manager')
 
+//Class to manage data storage for a room, which hosts games
 class Room {
   constructor(io, code, host, roomListHost, {name = 'unnamed', hostName = 'unnamed'} = {}) {
     this.io = io;
