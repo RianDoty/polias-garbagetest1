@@ -8,7 +8,7 @@ class ChatRoom {
     
     this.sync = new SyncHost(io, keyword);
     this.sockets = {};
-    
+    this.callbacks = new Map();
   }
   
   join(socket) {
@@ -23,6 +23,7 @@ class ChatRoom {
   }
   
   connect(socket) {
+    
     socket.on(`send-message ${this.keyword}`, this.sendMessage);
   }
   
