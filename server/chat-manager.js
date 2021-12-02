@@ -9,7 +9,7 @@ class ChatRoomManager {
     const rooms = {};
   }
   
-  makeRoom(keyword) {
+  createRoom(keyword) {
     this.rooms[keyword] = new ChatRoom(this.io, this.roomCode, keyword)
   }
   

@@ -104,7 +104,9 @@ class Room {
   }
   
   // Chat
-  init
+  generateChatRooms() {
+    this.chatManager.createRoom('lobby')
+  }
 }
 
 module.exports = Room;
