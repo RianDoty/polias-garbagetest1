@@ -1,5 +1,5 @@
 class User {
-  constructor(socket, {name}={}) {
+  constructor(socket, {name='Unknown'}={}) {
     this.socket = socket;
     this.name = name;
     this.host = false;

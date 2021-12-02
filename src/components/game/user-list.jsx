@@ -34,8 +34,6 @@ const UserEntry = ({user: {name='Unknown', cardID, role}, me}) => {
   )
 }
 
-
-
 const UserInfo = ({name='Unknown', role='Chillin\''}) => {
   return (
     <div class='user-info'>
