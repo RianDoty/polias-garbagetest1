@@ -23,15 +23,18 @@ class ChatRoom {
   }
   
   connect(socket) {
-    this.callbacks.set(socket, {
+    const callbacks = {
       sendMessage: this.sendMessage(socket)
-    })
+    }
+    this.callbacks.set(socket, callbacks)
     
-    socket.on(`send-message ${this.keyword}`, this.sendMessage);
+    socket.on(`send-message ${this.keyword}`, callbacks.sendMessage);
   }
   
   disconnect(socket) {
-    socket.off(`send-message ${this.keyword}`, this.sendMessage);
+    const callbacks = this.callbacks.get(socket);
+    
+    socket.off(`send-message ${this.keyword}`, callbacks.sendMessage);
   }
   
   // Below callbacks are generators

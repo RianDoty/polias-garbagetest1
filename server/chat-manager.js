@@ -6,7 +6,7 @@ class ChatRoomManager {
     this.io = io;
     this.roomCode = roomCode;
     
-    const rooms = {};
+    this.rooms = {};
   }
   
   createRoom(keyword) {
@@ -14,6 +14,7 @@ class ChatRoomManager {
   }
   
   joinSocket(socket, keyword) {
+    if (!this.rooms[keyword]) return false;
     this.rooms[keyword].join(socket);
     
     socket.on('disconnect', ()=>this.leaveSocket(socket,keyword));
