@@ -62,6 +62,7 @@ const MessageEntry = ({onSubmit}) => {
     e.preventDefault();
     
     onSubmit(content);
+    setContent('');
   }
   
   return (
