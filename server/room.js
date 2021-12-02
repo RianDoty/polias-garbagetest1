@@ -19,6 +19,9 @@ class Room {
     });
     this.roomListSync = roomListHost
     
+    // Chat
+    this.chatManager = new ChatRoomManager(io, code);
+    
     this.host = host
   }
   
@@ -90,6 +93,7 @@ class Room {
     this.updateList('pCount', this.pCount)
   }
   
+  // Host
   isHost(socket) {
     return (socket.id === this.host.id);
   }
@@ -98,6 +102,9 @@ class Room {
     this.host = socket;
     this.usersSync.update(socket.id, 'host', true);
   }
+  
+  // Chat
+  init
 }
 
 module.exports = Room;
