@@ -23,6 +23,9 @@ class ChatRoom {
   }
   
   connect(socket) {
+    this.callbacks.set(socket, {
+      sendMessage: this.sendMessage(socket)
+    })
     
     socket.on(`send-message ${this.keyword}`, this.sendMessage);
   }
@@ -31,6 +34,7 @@ class ChatRoom {
     socket.off(`send-message ${this.keyword}`, this.sendMessage);
   }
   
+  // Below callbacks are generators
   sendMessage(socket) {
     return (id, content) => {
       this.sync.create(id, {

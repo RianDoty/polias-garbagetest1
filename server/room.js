@@ -43,6 +43,9 @@ class Room {
     if (this.pCount == 1) {
       this.assignHost(socket);
     }
+    
+    //Join the socket into the lobby by default
+    this.chatManager.joinSocket(socket, 'lobby')
   }
   
   leave(socket) {

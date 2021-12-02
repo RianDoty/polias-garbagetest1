@@ -15,6 +15,8 @@ class ChatRoomManager {
   
   joinSocket(socket, keyword) {
     this.rooms[keyword].join(socket);
+    
+    socket.on('disconnect', ()=>this.leaveSocket(socket,keyword));
   }
   
   leaveSocket(socket, keyword) {
