@@ -41,7 +41,7 @@ class ChatRoom {
   sendMessage(socket) {
     return (id, content) => {
       this.sync.create(id, {
-        author: socket.user,
+        author: socket.user.template(),
         content: content
       })
     }

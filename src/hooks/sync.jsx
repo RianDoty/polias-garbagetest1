@@ -21,7 +21,7 @@ const useSync = (keyword, def) => {
   }, [keyword]);
 
   useSocketCallbacks({
-    [`sync set ${keyword}`]: (key, value) => {
+    [`sync create ${keyword}`]: (key, value) => {
       setStore(store => {
         store[key] = value;
         return store;
@@ -35,6 +35,7 @@ const useSync = (keyword, def) => {
           store[key] = value;
           return store
         }
+        if (!store[key]) return store;
         store[key][prop] = value
         
         return store

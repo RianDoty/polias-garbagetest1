@@ -12,13 +12,13 @@ class SyncHost {
     });
   }
 
-  set(key, value) {
+  create(key, value) {
     const { data, io, keyword } = this;
     console.log(`setting ${key} ${value}`)
     
     data[key] = value;
     
-    io.to(keyword).emit(`sync set ${keyword}`, key, value);
+    io.to(keyword).emit(`sync create ${keyword}`, key, value);
   }
 
   update(key, prop, value) {
