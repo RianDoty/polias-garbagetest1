@@ -43,7 +43,7 @@ const MessageList = ({messages={}}) => {
   )
 }
 
-const Message = ({data: {author, content, }}) => {
+const Message = ({data: {author, content}}) => {
   return (
     <li className='message'>
       <Avatar size='50px'/>
