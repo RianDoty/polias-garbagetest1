@@ -50,7 +50,6 @@ class Room {
   }
   
   leave(socket) {
-    console.log(`leaving socket ${socket.id}`)
     if (!this.users[socket.id]) return; //can't have a socket that never joined leave
     
     //Update users
@@ -74,7 +73,6 @@ class Room {
   
   get pCount() {
     const count = Object.keys(this.users).length;
-    console.log(`count measured as ${count}`)
     return  count;
   }
   
@@ -89,7 +87,6 @@ class Room {
   }
   
   updateList(prop, value) {
-    console.log(`updating ${prop} with ${value}`)
     this.roomListSync.update(this.code, prop, value);
   }
   

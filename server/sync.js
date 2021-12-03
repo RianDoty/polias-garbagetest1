@@ -14,8 +14,6 @@ class SyncHost {
 
   create(key, value) {
     const { data, io, keyword } = this;
-    console.log(`setting ${key} ${value}`)
-    
     data[key] = value;
     
     io.to(keyword).emit(`sync create ${keyword}`, key, value);

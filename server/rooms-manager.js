@@ -12,7 +12,6 @@ module.exports = io => {
     socket.on("create-room", ({name: hostName}, name, ack) => {
       const code = randomCode();
       
-      console.log('creating room')
       const newRoom = new Room(io, code, socket, roomListSync, {
         name,
         hostName
@@ -26,7 +25,6 @@ module.exports = io => {
     
     socket.on('join room', (code, ack=noop) => {
       if (rooms[code]) rooms[code].join(socket);
-      console.log(ack);
       ack(true);
     })
     
