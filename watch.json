@@ -15,5 +15,5 @@
       "^watch\\.json$"
     ]
   },
-  "throttle": 301
+  "throttle": 300
 }
