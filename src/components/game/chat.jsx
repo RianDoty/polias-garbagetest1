@@ -46,7 +46,7 @@ const MessageList = ({messages={}}) => {
 const Message = ({data: {author, content}}) => {
   return (
     <li className='message'>
-      <Avatar size='50px'/>
+      <Avatar cardId = {author.cardId}/>
       <div className='message-container'>
         <div className='message-author'>{author.name}</div>
         <div className='message-content'>{content}</div>
