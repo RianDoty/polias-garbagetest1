@@ -1,4 +1,4 @@
-const avatars = require('./avatars')
+import avatars from './avatars'
 const defaultAvatar = avatars.default;
 
 const Avatar = ({cardId}) => {
