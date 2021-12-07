@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-
 import UserList from './user-list';
 
 const SideBar = ({players}) => {

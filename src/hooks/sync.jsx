@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import useVolatileState from "./volatile-state";
 import { useSocket, useSocketCallbacks } from "./socket";
-import useForceUpdate from "./force-update";
 
 const useSync = (keyword, def) => {
   const socket = useSocket();

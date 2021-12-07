@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useLocation } from 'wouter';
 
 import UserContext from '../contexts/user';
@@ -46,7 +46,7 @@ const Profile = () => {
 export default function TopBar() {
   const [location] = useLocation();
   
-  const isInGame = location.indexOf('game') != -1;
+  const isInGame = location.indexOf('game') !== -1;
   
   return (
     <header className='common-header-container'>

@@ -25,6 +25,9 @@ class Room {
     this.chatManager = new ChatRoomManager(io, code);
     this.generateChatRooms();
     
+    //Cards
+    this.cardManager = new CardManager(io, code)
+    
     this.host = host
   }
   

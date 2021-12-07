@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import useSync from '../../hooks/sync';
 import UserContext from '../../contexts/user';
 import RoomContext from '../../contexts/room';

@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import useSync from "../../hooks/sync";
 import { useSocket } from '../../hooks/socket';

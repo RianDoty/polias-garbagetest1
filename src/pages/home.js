@@ -71,7 +71,7 @@ const NameEntry = ({ user }) => {
 const RoomCreator = () => {
   const [err, setErr] = useState();
   const [name, setName] = useState("");
-  const [location, setLocation] = useLocation();
+  const [, setLocation] = useLocation();
   const socket = useSocket();
   const user = useContext(UserContext);
 
