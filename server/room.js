@@ -2,6 +2,7 @@
 const SyncHost = require('./sync')
 const User = require('./user')
 const ChatRoomManager = require('./chat-manager')
+const CardManager = require('./card-manager')
 
 //Class to manage data storage for a room, which hosts games
 class Room {
