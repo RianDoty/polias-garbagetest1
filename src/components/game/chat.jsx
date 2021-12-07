@@ -5,9 +5,11 @@ import { useSocket } from '../../hooks/socket';
 import Avatar from './avatar'
 
 import RoomContext from '../../contexts/room';
+import UserContext from '../../contexts/user'
 
 const Chat = ({chatRoomName='lobby'}) => {
   const code = useContext(RoomContext)
+  const user = useContext(UserContext)
   const keyword = `room chat ${chatRoomName} ${code}`;
   const [messages, setMessages] = useSync(`room chat ${chatRoomName} ${code}`)
   const socket = useSocket();
@@ -17,7 +19,7 @@ const Chat = ({chatRoomName='lobby'}) => {
     const id = uuidv4();
     //Locally cache the message
     setMessages(m => {
-      m[id] = {author: socket.id, content, key: currentKey() + 1};
+      m[id] = {author: user, content, key: currentKey() + 1};
       return m;
     })
     
