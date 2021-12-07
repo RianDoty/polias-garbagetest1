@@ -57,7 +57,9 @@ const Message = ({data: {author, content}}) => {
 
 const MessageEntry = ({onSubmit}) => {
   const [content, setContent] = useState('')
+  const [lastMessageTime, setLastMessageTime] = useState();
   
+  const onCooldown = () => {}
   function handleSubmit(e) {
     e.preventDefault();
     
