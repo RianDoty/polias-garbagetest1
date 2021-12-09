@@ -10,7 +10,11 @@ class CardManager {
   constructor() {
     const [, defaultPack] = randomFromTable(avatars);    
     
-    this.pack = defaultPack;
+    this.assignPack(defaultPack);
+  }
+  
+  assignPack(pack) {
+    
   }
 }
 
